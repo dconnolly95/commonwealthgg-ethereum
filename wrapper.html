@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@FluxWallet" />
+        <meta name="twitter:title" content="FluxWallet.me" />
+        <meta name="twitter:description" content="Multichain Dapp and Game Development Project" />
+        <meta name="twitter:image" content="https://fluxwallet.me/assets/img/coin.png"/>
+        
+        <meta property="og:url" content="https://fluxwallet.me" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="FluxWallet.me" />
+        <meta property="og:description" content="Multichain Dapp and Game Development Project" />
+        <meta property="og:image" content="https://fluxwallet.me/assets/img/coin.png" />
+        
+        <title>FWETH | FluxWallet.me</title>
+        
+        <meta charset="utf8">
+        <meta name="description" content="Multichain Dapp and Game Development Project">
+        <meta name="keywords" content="Flux, Wallet, Token, Sale, Dapp, ICO, Cryptocurrency, Bitcoin, wen, moon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        
+        <!-- Semantic Style - Replace with Bootstrap -->
+        <link rel="stylesheet" href="assets/css/semantic.min.css">
+        
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="assets/css/alertify.min.css" />
+        <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
+        
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/hourglass.css" />
+        
+        <link rel="icon" type="image/png" href="assets/img/etc.png">
+        
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="wallpaper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+                <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-gradient-icon.png" width="30px" height="30px" /> commonwealth.gg</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link text-dark" href="dashboard.html"><i class="fas fa-coins text-dark"></i>  Wallet</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="calculator.html"><i class="fas fa-dollar-sign text-dark"></i> Calculator</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="chart.html"><i class="fas fa-chart-line text-dark"></i> Chart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="about.html"><i class="fas fa-info-circle text-dark"></i> About</a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <br /><br /><br />
+        <br /><br /><br />
+        
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel border-success rcAll">
+                            <div class="card-header glassPanel rcTop text-white">My Wallet</div>
+                            <div class="card-body text-white">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-white">You have <span id="userWETHBalance"></span> FWETH</h4>
+                                            <p class="text-muted">FluxWallet Wrapped ETH</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-sm btn-success rcAll" href="#" data-toggle="modal" data-target="#wrapModal">Wrap ETH</a>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-sm btn-danger rcAll" href="#" data-toggle="modal" data-target="#unwrapModal">Unwrap FWETH</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-white">FWETH Statistics</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="currentWrapped">0</span> FWETH</h4>
+                                            <p class="text-muted">Current Supply</p>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="totalWrapped" class="totalWrapped"></span> ETH</h4>
+                                            <p class="text-muted">Total Wrapped</p>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="totalUnwrapped" class="totalUnwrapped">0</span> ETH</h4>
+                                            <p class="text-muted">Total Unwrapped</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center text-white">
+                                <a class="btn btn-block btn-sm btn-info rcAll" href="https://blockscout.com/etc/mainnet/address/0xec89f7BdF4E3f4484e7ed4A965c9923AACf726C7/transactions" target="_blank">View on Blockscout</a>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                
+                
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="alert alert-dismissible alert-danger rcAll">
+                            <strong>WARNING:</strong> This is highly experimental! It works - but please, Only use ETH you can afford to lose until FluxWallet.me gets Smart Contract Verification!
+                        </div>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="accordion" id="accordionExample">
+                        <div class="card glassPanel rcTop">
+                            <div class="card-header" id="headingOne">
+                                <h3 class="mb-0 text-white">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <b class="text-white">What is FluxWallet Wrapped ETH?</b>
+                                    </button>
+                                </h3>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col text-center">
+                                                <p class="text-white text-center">
+                                                    FluxWallet Wrapped ETH (FWETH) is an ERC20 token minted and destroyed at a 1:1 ratio,  representing the ETH held within the FWETH Smart Contract.<br />
+                                                    Simply put, it gives ETH the powers of an ERC20 token - programmable, multi-functional - but still most importantly, <i>immutable, decentralised and secure</i>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b class="text-white">How does it Work?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="text-white text-center">
+                                        There&apos;s two parts to how FWETH works: <i>Wrapping ETH</i> and <i>Unwrapping FWETH</i>. Let&apos;s quickly go through both.
+                                    </p>
+                                    
+                                    <b class="text-white">Wrapping ETH</b>
+                                    <ul>
+                                        <li class="text-white">1. You deposit ETH into the FWETH Smart Contract, via this Dapp interface</li>
+                                        <li class="text-white">2. Once transactions are confirmed, you receive <b>FWETH</b>, minted 1:1 with the ETH you deposited</li>
+                                        <li class="text-white">3. You use the FWETH however applicable to your requirement</li>
+                                        <li class="text-white">4. You come back here to <i>unwrap your FWETH</i> once you are done</li>
+                                    </ul>
+                                    <br />
+                                    
+                                    <b class="text-white">Unwrapping FWETH</b>
+                                    <ul>
+                                        <li class="text-white">1. You unwrap FWETH tokens via this Dapp interface</li>
+                                        <li class="text-white">2. FWETH tokens are destroyed from the <i>Current Supply</i>, at a 1:1 ratio with the ETH you receive from unwrapping the FWETH tokens.</li>
+                                        <li class="text-white">3. You have ETH in your wallet, ready for regular use or trading!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <b class="text-white">Can I trade FWETH anywhere?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <p class="text-white text-center">
+                                                    FluxWallet Wrapped ETH is made available for use by the general public, via this Dapp interface.<br />
+                                                    Right now, FWETH is not listed on any exchanges or DEXs - however, You are welcome to wrap and unwrap ETH as you need / see fit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel rcBottom">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <b class="text-white">How Do I Get Started?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-success rcAll" href="#buyETHModal" data-toggle="modal" data-target="#buyETHModal">Buy some ETH</a>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-info rcAll" href="https://share.trustwallet.com/u5tgB1" target="_blank">Trust Wallet</a>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        
+                                        <div class="row">
+                                            <div class="col text-center text-white">
+                                                You&apos;ll need some Ethereum Classic (ETH) and a Wallet to use most of the included functionality of this Dapp.<br />
+                                                <br />
+                                                <a href="https://www.saturn.network/blog/saturn-wallet/" target="_blank"><b class="text-success">Saturn Wallet</b></a>
+                                                 works with <a href="https://chrome.google.com/webstore/detail/saturn-wallet/nkddgncdjgjfcddamfgcmfnlhccnimig?hl=en" target="_blank" class="text-success">Google Chrome</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/saturn-wallet/" target="_blank" class="text-success">Firefox</a>, and is the best choice for using Ethereum and Ethereum Classic quickly, efficiently and securely on your computer.<br />
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <div class="row jumbotron glassPanel rcAll">
+                    <div class="col text-center">
+                        <small class="text-white">
+                            This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
+                            There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bottom Navbar -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark text-dark" style="background-color: #fff;">
+            <a class="navbar-brand" href="#"></a>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <span id="current" class="text-white"></span>
+            </ul>
+        </nav>
+        
+        <br /><br /><br />
+        <br /><br /><br />
+
+        <!-- Buy ETH Modal -->
+        <div class="modal" id="buyETHModal">
+            <div class="modal-dialog">
+                <div class="modal-content border-white rcAll">
+                    <div class="modal-header bg-dark text-white rcTop">
+                        <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Buy ETH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-dark text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-warning rcAll" href="https://binance.com" target="_blank">
+                                            <img src="assets/img/external/binance.png" width="50px" height="50px" /><br />
+                                            <b>Binance</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-success rcAll" href="https://changelly.com" target="_blank">
+                                            <img src="assets/img/external/changelly.png" width="80px" height="50px" /><br />
+                                            <b>Changelly</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://moonpay.io" target="_blank">
+                                            <img src="assets/img/external/moonpay.png" width="50px" height="50px" /><br />
+                                            <b>Moonpay</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                <br />
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-dark rcAll" href="https://bestchange.com" target="_blank">
+                                            <img src="assets/img/external/bestchange.jpg" width="50px" height="50px" /><br />
+                                            <b>Bestchange</b><br />
+                                            <small>RU, Asia</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-info rcAll" href="https://coinbase.com" target="_blank">
+                                            <img src="assets/img/external/coinbase.jpg" width="50px" height="50px" /><br />
+                                            <b>Coinbase</b><br />
+                                            <small>USA, EU, AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-danger rcAll" href="https://coinspot.com.au" target="_blank">
+                                            <img src="assets/img/external/coinspot.png" width="50px" height="50px" /><br />
+                                            <b>Coinspot</b><br />
+                                            <small>AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://indodax.com" target="_blank">
+                                            <img src="assets/img/external/indodax.png" width="50px" height="50px" /><br />
+                                            <b>Indodax</b><br />
+                                            <small>INDO</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer bg-primary text-white rcBottom">
+                            <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Wrap ETH Modal -->
+        <div class="modal" id="wrapModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Wrap ETH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="wrapEtherForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="form-control rcAll etherToWrap" placeholder="ETH to Wrap..." type="text" name="etherToWrap" id="etherToWrap"><br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="btn btn-block btn-md btn-success rcAll" type="submit" value="Wrap ETH">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-md btn-primary rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unwrap ETH Modal -->
+        <div class="modal" id="unwrapModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Unwrap ETH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="unwrapEtherForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="form-control rcAll etherToUnwrap" placeholder="FWETH to Unwrap..." type="text" name="etherToUnwrap" id="etherToUnwrap"><br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="btn btn-block btn-md btn-danger rcAll" type="submit" value="Unwrap FWETH">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-md btn-primary rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+    
+        <script src="assets/js/web3.min.js"></script>
+        <script src="assets/js/ethereumjs.min.js"></script>
+        <script src="assets/js/alertify.min.js"></script>
+        <script src="assets/js/moment.min.js"></script>
+    
+        <script src="assets/lib/wrapper.js"></script>
+        
+        <script src="assets/lib/contracts.js"></script>
+        <script src="assets/lib/sponsor.js"></script>
+    </body>
+</html>

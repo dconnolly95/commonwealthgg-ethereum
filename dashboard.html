@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@FluxWallet" />
+        <meta name="twitter:title" content="FluxWallet.me" />
+        <meta name="twitter:description" content="Multichain Dapp and Game Development Project" />
+        <meta name="twitter:image" content="https://fluxwallet.me/assets/img/coin.png"/>
+        
+        <meta property="og:url" content="https://fluxwallet.me" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="FluxWallet.me" />
+        <meta property="og:description" content="Multichain Dapp and Game Development Project" />
+        <meta property="og:image" content="https://fluxwallet.me/assets/img/coin.png" />
+        
+        <title>EWLTH | Commonwealth.gg</title>
+        
+        <meta charset="utf8">
+        <meta name="description" content="Multichain Dapp and Game Development Project">
+        <meta name="keywords" content="Flux, Wallet, Token, Sale, Dapp, ICO, Cryptocurrency, Bitcoin, wen, moon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        
+        <!-- Semantic Style - Replace with Bootstrap -->
+        <link rel="stylesheet" href="assets/css/semantic.min.css">
+        
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="assets/css/alertify.min.css" />
+        <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
+        
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/hourglass.css" />
+        
+        <link rel="icon" type="image/png" href="assets/img/etc.png">
+        
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="wallpaper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+                <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-gradient-icon.png" width="30px" height="30px" /> commonwealth.gg</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link text-dark" href="dashboard.html"><i class="fas fa-coins text-dark"></i>  Wallet</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="calculator.html"><i class="fas fa-dollar-sign text-dark"></i> Calculator</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="chart.html"><i class="fas fa-chart-line text-dark"></i> Chart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="about.html"><i class="fas fa-info-circle text-dark"></i> About</a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <br /><br /><br />
+        <br /><br /><br />
+        
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-wallet text-dark"></i> My Wallet</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col col-sm-6 text-center">
+                                            <h4 class="text-dark">
+                                                <span id="myTokensValue" class="text-dark"></span> USD
+                                                <br />
+                                                <small>
+                                                    <img src="assets/img/whale.png" width="20px" height="20px" />
+                                                    <span id="myCropTokens"></span> EWLTH
+                                                </small>
+                                            </h4>
+                                            <span class="text-muted">My Balance</span>
+                                            <br />
+                                        </div>
+                                        
+                                        <div class="col col-sm-6 text-center">
+                                            <h4 class="text-dark">
+                                                <span id="myDividendsValue"></span> USD
+                                                <br />
+                                                <small>
+                                                    <img src="assets/img/etc-logo-transparent.png" width="13px" height="20px" />
+                                                    <span id="myCropDividends"></span> ETH
+                                                </small>
+                                            </h4>
+                                            <span class="text-muted">My Dividends</span>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button id="reinvest" class="btn btn-block btn-sm btn-success rcAll"><i class="recycle icon"></i>Compound</button>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <button id="withdraw" class="btn btn-block btn-sm btn-danger rcAll"><i class="money bill alternate  icon"></i>Withdraw</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-success rcAll">
+                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-dollar-sign text-success"></i> Buy EWLTH</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-dark">
+                                                <img src="assets/img/whale.png" width="20px" height="20px" /> 1 = <span class="text-success"><span id="tokenUSDBuyPrice"></span> USD</span>
+                                            </h4>
+                                            <small class="text-dark"><span id="tokenBuyGet">0.0000</span></small><br />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <input placeholder="ETH to Spend..." type="text" id="buyInput" class="form-control rcAll" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <span id="buyAmount"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button id="buy" class="btn btn-block btn-sm btn-success rcAll">Buy EWLTH</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-danger rcAll">
+                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-dollar-sign text-danger"></i> Sell EWLTH</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-dark">
+                                                <img src="assets/img/whale.png" width="20px" height="20px" /> 1 = <span class="text-danger"><span id="tokenUSDSellPrice"></span> USD</span>
+                                            </h4>
+                                            <small class="text-dark"><span id="tokenSellGet">0.0000</span></small><br />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <input placeholder="EWLTH to Sell..." type="text" id="sellInput" class="form-control rcAll" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <span id="sellAmount"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button id="sell" class="btn btn-block btn-sm btn-danger rcAll">Sell EWLTH</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel rcAll">
+                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center text-dark">
+                                            <p>When others use your Referral Link to Buy EWLTH, you get a special bonus! Be sure to share it around on all your Social Media!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-secondary rcAll copyLinkButton" data-clipboard-text="">
+                                                <i class="copy icon"></i> Copy Link
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-white"></i> View Market Data Chart</a><br />
+                    </div>
+                    <div class="col-md-6">
+                            <div class="card glassPanel rcAll">
+                                <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-arrow-right text-warning"></i> Transfer EWLTH</div>
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center text-dark">
+                                                <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
+                                                <br />
+                                                <input type="text" id="transferTokenCount" placeholder="Amount of Points" class="form-control rcAll">
+                                                <b>Please ensure details are correct before transferring!</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer glassPanel rcBottom">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <button id="transfer" class="btn btn-block btn-sm btn-warning rcAll">Transfer EWLTH</button>
+                                            </div>
+
+                                            <div class="col text-center">
+                                                <button id="qrCodeButton" class="btn btn-block btn-sm btn-secondary rcAll" data-target="#qrcodeModal" data-toggle="modal">
+                                                    <i class="fas fa-qrcode"></i> Show QR Code
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                </div>
+ 
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-dark">Price Floor</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-dark"><span id="rainMakerTokens"></span> EWLTH</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a id="rainMaker" class="btn btn-block btn-sm btn-secondary text-dark rcAll">
+                                                Raise Floor (<span id="rainMakerDividends"></span> ETH)
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-dark">Divies</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-dark"><span id="diviesBalance"></span> ETH</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a id="distribute" class="btn btn-block btn-sm btn-secondary text-dark rcAll">
+                                                Split Divies
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-dark">Your HODL</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-dark"><span id="myETHValue">0</span> ETH</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a id="blockscoutLink" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-dark">Commonwealth.gg</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-dark"><span id="etcInContract">0</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <div class="row jumbotron glassPanel rcAll">
+                    <div class="col text-center">
+                        <small class="text-dark">
+                            This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
+                            There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <br /><br /><br />
+        <br /><br /><br />
+        
+        <!-- Bottom Navbar -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark text-dark" style="background-color: #fff;">
+            <a class="navbar-brand" href="#"></a>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <span id="current" class="text-white"></span>
+            </ul>
+        </nav>
+        
+        <!-- QR Code Modal -->
+        <div class="modal" id="qrcodeModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-dark">Receive EWLTH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img id="qrImage" src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=Hello%20world&amp;choe=UTF-8" class="rcAll" alt="Your Crop Address as a QR Code"><br />
+                                    <p class="text-dark">
+                                        <b>Your Crop Address: </b>
+                                        <span id="myCropAddress" class="approx"></span><br />
+                                    </p>
+                                    <button id="copyAddressButton" class="btn btn-block btn-sm btn-secondary rcAll copyAddressButton" data-clipboard-text="">
+                                        <i class="copy icon"></i> Copy Address
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-sm btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Data Modal -->
+        <div class="modal" id="marketdatachartModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-primary rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-dark">Market Data Chart</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center bg-dark rcAll">
+                                    <svg id="container"></svg><br />
+                                    <a href="https://www.xenobank.com/" class="text-success text-center" target="_blank" style="font-size:10px;">(More  Data at Xenobank.com)</a>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div id="timeFrame" class="ui selection dropdown" style="font-size: .75em;">
+                                        <input>
+                                        <i class="dropdown icon"></i>
+                                        <div>
+                                            <b>Price</b><span class="ui green text">&nbsp;| <span id="numDays">90 Days</span></span>
+                                        </div>
+                                        <div class="menu">
+                                            <div class="item" data-value="30">30 Days</div>
+                                            <div class="item" data-value="90">90 Days</div>
+                                            <div class="item" data-value="180">6 Months</div>
+                                            <div class="item" data-value="365">1 Year</div>
+                                            <div class="item" data-value="100000">Max</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-sm btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Buy ETH Modal -->
+        <div class="modal" id="buyETHModal">
+            <div class="modal-dialog">
+                <div class="modal-content border-white rcAll">
+                    <div class="modal-header bg-primary text-dark rcTop">
+                        <h4 class="modal-title text-dark"><i class="fas fa-long-arrow-alt-right"></i>  Buy ETH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-primary text-dark">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-warning rcAll" href="https://binance.com" target="_blank">
+                                            <img src="assets/img/external/binance.png" width="50px" height="50px" /><br />
+                                            <b>Binance</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-success rcAll" href="https://changelly.com" target="_blank">
+                                            <img src="assets/img/external/changelly.png" width="80px" height="50px" /><br />
+                                            <b>Changelly</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://moonpay.io" target="_blank">
+                                            <img src="assets/img/external/moonpay.png" width="50px" height="50px" /><br />
+                                            <b>Moonpay</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                <br />
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-dark rcAll" href="https://bestchange.com" target="_blank">
+                                            <img src="assets/img/external/bestchange.jpg" width="50px" height="50px" /><br />
+                                            <b>Bestchange</b><br />
+                                            <small>RU, Asia</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-info rcAll" href="https://coinbase.com" target="_blank">
+                                            <img src="assets/img/external/coinbase.jpg" width="50px" height="50px" /><br />
+                                            <b>Coinbase</b><br />
+                                            <small>USA, EU, AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-danger rcAll" href="https://coinspot.com.au" target="_blank">
+                                            <img src="assets/img/external/coinspot.png" width="50px" height="50px" /><br />
+                                            <b>Coinspot</b><br />
+                                            <small>AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://indodax.com" target="_blank">
+                                            <img src="assets/img/external/indodax.png" width="50px" height="50px" /><br />
+                                            <b>Indodax</b><br />
+                                            <small>INDO</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer bg-primary text-dark rcBottom">
+                            <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        
+        <script src="assets/js/jquery.lazyload.min.js"></script>
+        <script src="assets/js/jquery.validation.min.js"></script>
+        <script src="assets/js/tether.min.js"></script>
+        <script src="assets/js/common.min.js"></script>
+        <script src="assets/js/d3.v5.min.js"></script>
+        <script src="assets/js/alertify.min.js"></script>
+        <script src="assets/js/semantic.min.js"></script>
+        <script src="assets/js/moment.min.js"></script>
+        <script src="assets/js/web3.min.js"></script>
+        <script src="assets/js/clipboard.min.js"></script>
+        <script src="assets/js/lodash.min.js"></script>
+        
+        <script src="assets/lib/util.js"></script>
+        <script src="assets/lib/home.js"></script>
+        <script src="assets/lib/contracts.js"></script>
+        <script src="assets/lib/pure.js"></script>
+        <script src="assets/lib/rainmaker.js"></script>
+        <script src="assets/lib/masternode.js"></script>
+        <script src="assets/lib/sponsor.js"></script>
+        <script src="assets/lib/use.js"></script>
+        <script src="assets/lib/charts.js"></script>
+        <script src="assets/lib/prices.js"></script>
+        <script src="assets/lib/loader.js"></script>
+    </body>
+</html>

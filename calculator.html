@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@FluxWallet" />
+        <meta name="twitter:title" content="FluxWallet.me" />
+        <meta name="twitter:description" content="Multichain Dapp and Game Development Project" />
+        <meta name="twitter:image" content="https://fluxwallet.me/assets/img/coin.png"/>
+        
+        <meta property="og:url" content="https://fluxwallet.me" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="FluxWallet.me" />
+        <meta property="og:description" content="Multichain Dapp and Game Development Project" />
+        <meta property="og:image" content="https://fluxwallet.me/assets/img/coin.png" />
+        
+        <title>Contracts | FluxWallet.me</title>
+        
+        <meta charset="utf8">
+        <meta name="description" content="Multichain Dapp and Game Development Project">
+        <meta name="keywords" content="Flux, Wallet, Token, Sale, Dapp, ICO, Cryptocurrency, Bitcoin, wen, moon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        
+        <!-- Semantic Style - Replace with Bootstrap -->
+        <link rel="stylesheet" href="assets/css/semantic.min.css">
+        
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="assets/css/alertify.min.css" />
+        <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
+        
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/hourglass.css" />
+        
+        <link rel="icon" type="image/png" href="assets/img/etc.png">
+        
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="wallpaper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+                <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-gradient-icon.png" width="30px" height="30px" /> commonwealth.gg</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link text-dark" href="dashboard.html"><i class="fas fa-coins text-dark"></i>  Wallet</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="calculator.html"><i class="fas fa-dollar-sign text-dark"></i> Calculator</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="chart.html"><i class="fas fa-chart-line text-dark"></i> Chart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="about.html"><i class="fas fa-info-circle text-dark"></i> About</a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <br /><br /><br />
+        <br /><br /><br />
+        
+        <main role="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="jumbotron glassPanel rcAll text-white">
+                            <div class="col text-center">
+                                <img src="assets/img/logo.png" width="100px" height="100px" />
+                                <h4 class="text-white">FluxWallet.me</h4>
+                                <p class="text-muted">Multichain Dapp and Game Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card glassPanel text-dark text-center rcAll">
+                            <div class="card-header">Financial Independence Calculator</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+                                            <label>Potential Deposit (USD)</label>
+                                            <input id="possibleInvestment" type="text" placeholder="Dollars" size="7">
+                                            <span id="inputETC" class="" style="">(53.82 ETC)</span>
+                                        </div>
+
+                                        <div class="col-md-6 text-center">
+                                            <label>Timeframe (History)</label>
+
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            You would have <b><span id="myPossibleValue" class="text-success">0.00</span></b> of WLTH (<span id="myPossibleIncrease" class="red">0.00%</span>), earning <i><span id="myPossibleDividendsUSD" class="text-warning">0.00 ETH</span></i> of Dividends up to today.<br />
+                                            You would own <u><span id="myPossiblePercentage" class="text-danger">0.00%</span></u> of the Total EWLTH supply.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <i>Based on the past performance of Commonwealth. Past performance does not guarantee future results.</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+            </div>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <div class="row jumbotron glassPanel rcAll">
+                    <div class="col text-center">
+                        <small class="text-white">
+                            This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
+                            There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bottom Navbar -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark text-dark" style="background-color: #fff;">
+            <a class="navbar-brand" href="#"></a>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <span id="current" class="text-white"></span>
+            </ul>
+        </nav>
+        
+        <!-- Buy ETH Modal -->
+        <div class="modal" id="buyETHModal">
+            <div class="modal-dialog">
+                <div class="modal-content border-white rcAll">
+                    <div class="modal-header bg-primary text-white rcTop">
+                        <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Buy ETH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-primary text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-warning rcAll" href="https://binance.com" target="_blank">
+                                            <img src="assets/img/external/binance.png" width="50px" height="50px" /><br />
+                                            <b>Binance</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-success rcAll" href="https://changelly.com" target="_blank">
+                                            <img src="assets/img/external/changelly.png" width="80px" height="50px" /><br />
+                                            <b>Changelly</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://moonpay.io" target="_blank">
+                                            <img src="assets/img/external/moonpay.png" width="50px" height="50px" /><br />
+                                            <b>Moonpay</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                <br />
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-dark rcAll" href="https://bestchange.com" target="_blank">
+                                            <img src="assets/img/external/bestchange.jpg" width="50px" height="50px" /><br />
+                                            <b>Bestchange</b><br />
+                                            <small>RU, Asia</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-info rcAll" href="https://coinbase.com" target="_blank">
+                                            <img src="assets/img/external/coinbase.jpg" width="50px" height="50px" /><br />
+                                            <b>Coinbase</b><br />
+                                            <small>USA, EU, AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-danger rcAll" href="https://coinspot.com.au" target="_blank">
+                                            <img src="assets/img/external/coinspot.png" width="50px" height="50px" /><br />
+                                            <b>Coinspot</b><br />
+                                            <small>AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://indodax.com" target="_blank">
+                                            <img src="assets/img/external/indodax.png" width="50px" height="50px" /><br />
+                                            <b>Indodax</b><br />
+                                            <small>INDO</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer bg-primary text-white rcBottom">
+                            <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </body>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/ethereumjs.min.js"></script>
+    <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    
+    <script src="assets/lib/contracts.js"></script>
+    <script src="assets/lib/sponsor.js"></script>
+</html>
