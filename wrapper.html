@@ -73,13 +73,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel border-success rcAll">
-                            <div class="card-header glassPanel rcTop text-white">My Wallet</div>
-                            <div class="card-body text-white">
+                            <div class="card-header glassPanel rcTop text-dark">My Wallet</div>
+                            <div class="card-body text-dark">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">You have <span id="userWETHBalance"></span> FWETH</h4>
-                                            <p class="text-muted">FluxWallet Wrapped ETH</p>
+                                            <h4 class="text-dark">You have <span id="userWETHBalance"></span> UNIWLTH</h4>
+                                            <p class="text-muted">Commonwealth.gg UniSwap WLTH</p>
                                         </div>
                                     </div>
                                 </div>
@@ -87,11 +87,11 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <a class="btn btn-block btn-sm btn-success rcAll" href="#" data-toggle="modal" data-target="#wrapModal">Wrap ETH</a>
+                                        <a class="btn btn-block btn-sm btn-success rcAll" href="#" data-toggle="modal" data-target="#wrapModal">Wrap WLTH</a>
                                     </div>
                                     
                                     <div class="col text-center">
-                                        <a class="btn btn-block btn-sm btn-danger rcAll" href="#" data-toggle="modal" data-target="#unwrapModal">Unwrap FWETH</a>
+                                        <a class="btn btn-block btn-sm btn-danger rcAll" href="#" data-toggle="modal" data-target="#unwrapModal">Unwrap UNIWLTH</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,29 +102,28 @@
                     
                     <div class="col-md-6">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-white">FWETH Statistics</div>
+                            <div class="card-header glassPanel rcTop text-dark">UNIWLTH Statistics</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white"><span id="currentWrapped">0</span> FWETH</h4>
-                                            <p class="text-muted">Current Supply</p>
-                                        </div>
-                                        
-                                        <div class="col text-center">
-                                            <h4 class="text-white"><span id="totalWrapped" class="totalWrapped"></span> ETH</h4>
-                                            <p class="text-muted">Total Wrapped</p>
-                                        </div>
-                                        
-                                        <div class="col text-center">
-                                            <h4 class="text-white"><span id="totalUnwrapped" class="totalUnwrapped">0</span> ETH</h4>
-                                            <p class="text-muted">Total Unwrapped</p>
+                                            <h4 class="text-dark">Current Supply: <span id="currentWrapped">0</span> UNIWLTH</h4>
+                                            <h6 class="text-dark"><span id="totalWrapped" class="totalWrapped"></span> WLTH Wrapped / <span id="totalUnwrapped" class="totalUnwrapped">0</span> UNIWLTH Unwrapped</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer text-center text-white">
-                                <a class="btn btn-block btn-sm btn-info rcAll" href="https://blockscout.com/etc/mainnet/address/0xec89f7BdF4E3f4484e7ed4A965c9923AACf726C7/transactions" target="_blank">View on Blockscout</a>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-md btn-success rcAll" href="#" target="_blank">Trade on UniSwap</a>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-md btn-secondary rcAll" href="https://blockscout.com/etc/mainnet/address/0xec89f7BdF4E3f4484e7ed4A965c9923AACf726C7/transactions" target="_blank">View on EtherScan</a>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                         <br />
@@ -135,8 +134,8 @@
                 
                 <div class="row">
                     <div class="col text-center">
-                        <div class="alert alert-dismissible alert-danger rcAll">
-                            <strong>WARNING:</strong> This is highly experimental! It works - but please, Only use ETH you can afford to lose until FluxWallet.me gets Smart Contract Verification!
+                        <div class="alert alert-dismissible alert-success rcAll">
+                            <strong>Hey there!</strong> This is a tool for trading EWLTH on UniSwap, which also acts as a community pool for earning Dividends!
                         </div>
                     </div>
                 </div>
@@ -147,9 +146,9 @@
                         <div class="accordion" id="accordionExample">
                         <div class="card glassPanel rcTop">
                             <div class="card-header" id="headingOne">
-                                <h3 class="mb-0 text-white">
+                                <h3 class="mb-0 text-dark">
                                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <b class="text-white">What is FluxWallet Wrapped ETH?</b>
+                                        <b class="text-dark">What is UNIWLTH?</b>
                                     </button>
                                 </h3>
                             </div>
@@ -159,7 +158,7 @@
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="col text-center">
-                                                <p class="text-white text-center">
+                                                <p class="text-dark text-center">
                                                     FluxWallet Wrapped ETH (FWETH) is an ERC20 token minted and destroyed at a 1:1 ratio,  representing the ETH held within the FWETH Smart Contract.<br />
                                                     Simply put, it gives ETH the powers of an ERC20 token - programmable, multi-functional - but still most importantly, <i>immutable, decentralised and secure</i>.
                                                 </p>
@@ -173,30 +172,30 @@
                             <div class="card-header" id="headingTwo">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <b class="text-white">How does it Work?</b>
+                                        <b class="text-dark">How does it Work?</b>
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p class="text-white text-center">
+                                    <p class="text-dark text-center">
                                         There&apos;s two parts to how FWETH works: <i>Wrapping ETH</i> and <i>Unwrapping FWETH</i>. Let&apos;s quickly go through both.
                                     </p>
                                     
-                                    <b class="text-white">Wrapping ETH</b>
+                                    <b class="text-dark">Wrapping ETH</b>
                                     <ul>
-                                        <li class="text-white">1. You deposit ETH into the FWETH Smart Contract, via this Dapp interface</li>
-                                        <li class="text-white">2. Once transactions are confirmed, you receive <b>FWETH</b>, minted 1:1 with the ETH you deposited</li>
-                                        <li class="text-white">3. You use the FWETH however applicable to your requirement</li>
-                                        <li class="text-white">4. You come back here to <i>unwrap your FWETH</i> once you are done</li>
+                                        <li class="text-dark">1. You deposit ETH into the FWETH Smart Contract, via this Dapp interface</li>
+                                        <li class="text-dark">2. Once transactions are confirmed, you receive <b>FWETH</b>, minted 1:1 with the ETH you deposited</li>
+                                        <li class="text-dark">3. You use the FWETH however applicable to your requirement</li>
+                                        <li class="text-dark">4. You come back here to <i>unwrap your FWETH</i> once you are done</li>
                                     </ul>
                                     <br />
                                     
-                                    <b class="text-white">Unwrapping FWETH</b>
+                                    <b class="text-dark">Unwrapping FWETH</b>
                                     <ul>
-                                        <li class="text-white">1. You unwrap FWETH tokens via this Dapp interface</li>
-                                        <li class="text-white">2. FWETH tokens are destroyed from the <i>Current Supply</i>, at a 1:1 ratio with the ETH you receive from unwrapping the FWETH tokens.</li>
-                                        <li class="text-white">3. You have ETH in your wallet, ready for regular use or trading!</li>
+                                        <li class="text-dark">1. You unwrap FWETH tokens via this Dapp interface</li>
+                                        <li class="text-dark">2. FWETH tokens are destroyed from the <i>Current Supply</i>, at a 1:1 ratio with the ETH you receive from unwrapping the FWETH tokens.</li>
+                                        <li class="text-dark">3. You have ETH in your wallet, ready for regular use or trading!</li>
                                     </ul>
                                 </div>
                             </div>
@@ -205,7 +204,7 @@
                             <div class="card-header" id="headingThree">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <b class="text-white">Can I trade FWETH anywhere?</b>
+                                        <b class="text-dark">Can I trade FWETH anywhere?</b>
                                     </button>
                                 </h5>
                             </div>
@@ -214,7 +213,7 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col text-center">
-                                                <p class="text-white text-center">
+                                                <p class="text-dark text-center">
                                                     FluxWallet Wrapped ETH is made available for use by the general public, via this Dapp interface.<br />
                                                     Right now, FWETH is not listed on any exchanges or DEXs - however, You are welcome to wrap and unwrap ETH as you need / see fit.
                                                 </p>
@@ -228,7 +227,7 @@
                             <div class="card-header" id="headingFour">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <b class="text-white">How Do I Get Started?</b>
+                                        <b class="text-dark">How Do I Get Started?</b>
                                     </button>
                                 </h5>
                             </div>
@@ -237,17 +236,17 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col text-center">
-                                                <a class="btn btn-block btn-lg btn-dark btn-outline-success rcAll" href="#buyETHModal" data-toggle="modal" data-target="#buyETHModal">Buy some ETH</a>
+                                                <a class="btn btn-block btn-lg btn-secondary btn-outline-success rcAll" href="#buyETHModal" data-toggle="modal" data-target="#buyETHModal">Buy some ETH</a>
                                             </div>
                                             
                                             <div class="col text-center">
-                                                <a class="btn btn-block btn-lg btn-dark btn-outline-info rcAll" href="https://share.trustwallet.com/u5tgB1" target="_blank">Trust Wallet</a>
+                                                <a class="btn btn-block btn-lg btn-secondary btn-outline-info rcAll" href="https://share.trustwallet.com/u5tgB1" target="_blank">Trust Wallet</a>
                                             </div>
                                         </div>
                                         <br />
                                         
                                         <div class="row">
-                                            <div class="col text-center text-white">
+                                            <div class="col text-center text-dark">
                                                 You&apos;ll need some Ethereum Classic (ETH) and a Wallet to use most of the included functionality of this Dapp.<br />
                                                 <br />
                                                 <a href="https://www.saturn.network/blog/saturn-wallet/" target="_blank"><b class="text-success">Saturn Wallet</b></a>
@@ -270,7 +269,7 @@
             <div class="container">
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
-                        <small class="text-white">
+                        <small class="text-dark">
                             This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
                             There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
                         </small>
