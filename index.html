@@ -59,9 +59,9 @@
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/xh3nkp4" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
                     </ul>
                 </div>
             </nav>
@@ -83,8 +83,8 @@
                                 <h1 class="text-white display-4">commonwealth.gg</h1>
                                 <p class="text-white">The World&apos;s Saving Fund on Ethereum</p>
                                 <a class="btn btn-light btn-lg rcAll" href="dashboard.html"><i class="fas fa-wallet"></i> Web Wallet</a>
-                                <a class="btn btn-light btn-lg rcAll" href="#"><i class="fas fa-chart-bar"></i> Chart</a>
-                                <a class="btn btn-light btn-lg rcAll" href="#"><i class="fas fa-info-circle"></i> About</a>
+                                <a class="btn btn-light btn-lg rcAll" href="chart.html"><i class="fas fa-chart-bar"></i> Chart</a>
+                                <a class="btn btn-light btn-lg rcAll" href="about.html"><i class="fas fa-info-circle"></i> About</a>
                             </div>
                         </div>
                     </div>
@@ -92,20 +92,20 @@
                 
                 <div class="row">
                     <div class="col text-center">
-                        <div id="sizeStats" class="alert alert-light text-center rcAll">
-                            <h4><strong><i class="fas fa-piggy-bank"></i> Vault: </strong> 0.00 ETH</h4>
+                        <div class="alert alert-light text-center rcAll">
+                            <strong><i class="fas fa-piggy-bank"></i> Vault: </strong> <span id="sizeETH"></span> (<span id="sizeUSD"></span> USD)
                         </div>
                     </div>
                     
                     <div class="col text-center">
                         <div class="alert alert-light text-center rcAll">
-                            <strong><i class="fas fa-dollar-sign"></i> EWLTH Price: </strong> $0.11 USD
+                            <strong><i class="fas fa-dollar-sign"></i> EWLTH Price: </strong> <span id="priceETH"></span> (<span id="priceUSD"></span> USD)
                         </div>
                     </div>
                     
                     <div class="col text-center">
                         <div class="alert alert-light text-center rcAll">
-                            <strong><i class="fas fa-hand-holding-usd"></i> Dividends: </strong> 0.00 ETH
+                            <strong><i class="fas fa-hand-holding-usd"></i> Dividends: </strong> <span id="totalDividends"></span> (<span id="dividendsUSD"></span> USD)
                         </div>
                     </div>
                 </div>
@@ -143,11 +143,11 @@
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="btn btn-block btn-lg btn-light rcAll" href="#">Join the Community Chat</a><br />
+                        <a class="btn btn-block btn-lg btn-light rcAll" href="https://discord.gg/xh3nkp4" target="_blank">Join the Community Chat</a><br />
                     </div>
                     
                     <div class="col-md-6">
-                        <a class="btn btn-block btn-lg btn-light rcAll" href="#">Read the Whitepaper</a><br />
+                        <a class="btn btn-block btn-lg btn-light rcAll" href="commonwealth.pdf" target="_blank">Read the Whitepaper</a><br />
                     </div>
                 </div>
                 

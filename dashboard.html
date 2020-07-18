@@ -57,9 +57,9 @@
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/xh3nkp4" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
                     </ul>
                 </div>
             </nav>
@@ -276,7 +276,7 @@
                 </div>
  
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="card glassPanel border-white rcAll">
                             <div class="card-header glassPanel rcTop text-dark">Price Floor</div>
                             <div class="card-body">
@@ -284,6 +284,7 @@
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4 class="text-dark"><span id="rainMakerTokens"></span> EWLTH</h4>
+                                            <p>The Price Floor provides a guaranteed minimum value for eWLTH!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -305,39 +306,13 @@
                     
                     <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-dark">Divies</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4 class="text-dark"><span id="diviesBalance"></span> ETH</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <a id="distribute" class="btn btn-block btn-sm btn-secondary text-dark rcAll">
-                                                Split Divies
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <div class="card glassPanel border-white rcAll">
                             <div class="card-header glassPanel rcTop text-dark">Your HODL</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4 class="text-dark"><span id="myETHValue">0</span> ETH</h4>
+                                            <p>Approx Value</p>
                                         </div>
                                     </div>
                                 </div>
@@ -346,7 +321,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a id="blockscoutLink" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
+                                            <a id="blockscoutLink" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://etherscan.io/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
                                         </div>
                                     </div>
                                 </div>
@@ -363,6 +338,7 @@
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4 class="text-dark"><span id="etcInContract">0</span></h4>
+                                            <p>In the Contract</p>
                                         </div>
                                     </div>
                                 </div>
@@ -371,7 +347,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
+                                            <a class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://etherscan.io/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
                                         </div>
                                     </div>
                                 </div>
@@ -388,8 +364,7 @@
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
                         <small class="text-dark">
-                            This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
-                            There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
+                            This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running here and cannot be changed. Don't trust, verify.
                         </small>
                     </div>
                 </div>
@@ -448,7 +423,7 @@
         <!-- Market Data Modal -->
         <div class="modal" id="marketdatachartModal">
             <div class="modal-dialog">
-                <div class="modal-content bg-secondary text-dark rcAll">
+                <div class="modal-content bg-light text-dark rcAll">
 
                     <!-- Modal Header -->
                     <div class="modal-header">

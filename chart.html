@@ -57,9 +57,9 @@
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/xh3nkp4" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
                     </ul>
                 </div>
             </nav>
@@ -72,61 +72,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <div class="card glassPanel text-dark text-center rcAll">
-                            <div class="card-header">
-                                <h6>
-                                    <b>asdf</b>
-                                </h6>
-                            </div>
+                        <div class="alert alert-light text-center rcAll">
+                            <strong><i class="fas fa-piggy-bank"></i> Vault: </strong> <span id="sizeETH"></span> (<span id="sizeUSD"></span> USD)
                         </div>
-                        <br />
                     </div>
                     
                     <div class="col text-center">
-                        <div class="card glassPanel text-dark text-center rcAll">
-                            <div class="card-header">
-                                <h6>
-                                    <b>asdf</b>
-                                </h6>
-                            </div>
+                        <div class="alert alert-light text-center rcAll">
+                            <strong><i class="fas fa-dollar-sign"></i> EWLTH Price: </strong> <span id="priceETH"></span> (<span id="priceUSD"></span> USD)
                         </div>
-                        <br />
                     </div>
                     
                     <div class="col text-center">
-                        <div class="card glassPanel text-dark text-center rcAll">
-                            <div class="card-header">
-                                <h6>
-                                    <b>asdf</b>
-                                </h6>
-                            </div>
+                        <div class="alert alert-light text-center rcAll">
+                            <strong><i class="fas fa-hand-holding-usd"></i> Dividends: </strong> <span id="totalDividends"></span> (<span id="dividendsUSD"></span> USD)
                         </div>
-                        <br />
                     </div>
                     
                     <div class="col text-center">
-                        <div class="card glassPanel text-dark text-center rcAll">
-                            <div class="card-header">
-                                <h6>
-                                    <b>asdf</b>
-                                </h6>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                </div>
-                
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-center glassPanel text-dark rcAll">
-                            <svg id="container"></svg><br />
-                            <a href="https://www.xenobank.com/" class="text-success text-center" target="_blank" style="font-size:10px;">(More  Data at Xenobank.com)</a>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col text-center">
-                            <div id="timeFrame" class="ui selection dropdown" style="font-size: .75em;">
+                        <label class="text-white">History to View</label>
+                        <div id="timeFrame" class="ui selection dropdown">
                                 <input>
                                 <i class="dropdown icon"></i>
                                 <div>
@@ -140,8 +105,17 @@
                                     <div class="item" data-value="100000">Max</div>
                                 </div>
                             </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center glassPanel text-dark rcAll">
+                            <svg id="container"></svg><br />
+                            <a href="https://www.xenobank.com/" class="text-success text-center" target="_blank" style="font-size:10px;">(More  Data at Xenobank.com)</a>
                         </div>
                     </div>
+                    <br />
                 </div>
                 
                 <div class="row">
@@ -153,20 +127,46 @@
                                     <div class="row">
                                         <div class="col-md-6 text-center">
                                             <label>Potential Deposit (USD)</label>
-                                            <input id="possibleInvestment" type="text" placeholder="Dollars" size="7">
+                                            <input id="possibleInvestment" type="text" class="form-control rcAll" placeholder="Dollars" size="7">
                                             <span id="inputETC" class="" style="">(53.82 ETC)</span>
                                         </div>
 
                                         <div class="col-md-6 text-center">
-                                            <label>Timeframe (History)</label>
-
+                                            <label>Timeframe (History)</label><br />
+                                            <div id="timeFrame" class="ui selection dropdown">
+                                                <input>
+                                                <i class="dropdown icon"></i>
+                                                <div>
+                                                    <b>Price</b><span class="ui green text">&nbsp;| <span id="numDays">90 Days</span></span>
+                                                </div>
+                                                <div class="menu">
+                                                    <div class="item" data-value="30">30 Days</div>
+                                                    <div class="item" data-value="90">90 Days</div>
+                                                    <div class="item" data-value="180">6 Months</div>
+                                                    <div class="item" data-value="365">1 Year</div>
+                                                    <div class="item" data-value="100000">Max</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <hr />
+                                    
+                                    <h3>If you had invested x days ago, you could have had</h3>
+                                    <br />
                                     <div class="row">
                                         <div class="col text-center">
-                                            You would have <b><span id="myPossibleValue" class="text-success">0.00</span></b> of WLTH (<span id="myPossibleIncrease" class="red">0.00%</span>), earning <i><span id="myPossibleDividendsUSD" class="text-warning">0.00 ETH</span></i> of Dividends up to today.<br />
-                                            You would own <u><span id="myPossiblePercentage" class="text-danger">0.00%</span></u> of the Total EWLTH supply.
+                                            <h4 class="text-success"><b><span id="myPossibleValue">0.00</span> eWLTH</b></h4>
+                                            <small>eWLTH Tokens</small>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h4 class="text-warning"><b><span id="myPossibleDividendsUSD">0.00 ETH</span></b></h4>
+                                            <small>of eWLTH Dividends</small>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h4 class="text-danger"><b><span id="myPossiblePercentage">0.00%</span></b></h4>
+                                            <small>of the eWLTH Supply</small>
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +174,9 @@
                             <div class="card-footer">
                                 <div class="container">
                                     <div class="row">
-                                        <i>Based on the past performance of Commonwealth. Past performance does not guarantee future results.</i>
+                                        <div class="col text-center">
+                                            <i>Based on the past performance of Commonwealth. Past performance does not guarantee future results.</i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -190,14 +192,17 @@
             <div class="container">
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
-                        <small class="text-white">
-                            This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
-                            There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
+                        <small class="text-dark">
+                            This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running here and cannot be changed. Don't trust, verify.
                         </small>
                     </div>
                 </div>
             </div>
         </footer>
+        <br />
+        <br />
+        <br />
+        <br />
         
         <!-- Bottom Navbar -->
         <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark text-dark" style="background-color: #fff;">

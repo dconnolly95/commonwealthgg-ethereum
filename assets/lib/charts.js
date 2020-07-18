@@ -243,13 +243,10 @@ function wrap(text, width) {
     });
 }
 
-$('#statsContainer').hide();
 setStats()
 function setStats() {
     $.getJSON("https://api.commonwealth.gg/chart/info", function (data) {
 		if (data !== null){
-			// (New Number - Original Number) ÷ Original Number × 100.
-			$('#statsContainer').show();
 			P3CSupply = numberWithCommas(Number(data.P3CSupply).toFixed(0))
 			SupplyPercentage = (data.P3CSupply / 204939005.8).toFixed(4) * 100 + "%"
 
@@ -263,18 +260,18 @@ function setStats() {
 			$("#totalDividends").replaceWith(Dividends)
 			$("#dividendsUSD").replaceWith(DividendsUSD)
 
-			PriceETH = data.PriceETH.toFixed(4) + " ETH"
+			PriceETH = data.PriceETC.toFixed(4) + " ETH"
 			PriceUSD = "$" + data.PriceUSD.toFixed(4)
 
 			$("#priceETH").replaceWith(PriceETH)
 			$("#priceUSD").replaceWith(PriceUSD)
 
-			SizeETH = numberWithCommas(data.SizeETH.toFixed(0)) + " ETH"
+			SizeETH = numberWithCommas(data.SizeETC.toFixed(0)) + " ETH"
 			SizeUSD = "$" + numberWithCommas(data.SizeUSD.toFixed(0))
 
 			$("#sizeETH").replaceWith(SizeETH)
 			$("#sizeUSD").replaceWith(SizeUSD)
-			$("#etcPriceUSD").replaceWith(data.ETHPriceUSD.toFixed(2))
+			$("#ethPriceUSD").replaceWith(data.ETHPriceUSD.toFixed(2))
 		}
 	});
 }
