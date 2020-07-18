@@ -13,7 +13,7 @@
         <meta property="og:description" content="Multichain Dapp and Game Development Project" />
         <meta property="og:image" content="https://fluxwallet.me/assets/img/coin.png" />
         
-        <title>EWLTH | Commonwealth.gg</title>
+        <title>eWLTH | Commonwealth.gg</title>
         
         <meta charset="utf8">
         <meta name="description" content="Multichain Dapp and Game Development Project">
@@ -99,7 +99,7 @@
                     
                     <div class="col text-center">
                         <div class="alert alert-light text-center rcAll">
-                            <strong><i class="fas fa-dollar-sign"></i> EWLTH Price: </strong> <span id="priceETH"></span> (<span id="priceUSD"></span> USD)
+                            <strong><i class="fas fa-dollar-sign"></i> eWLTH Price: </strong> <span id="priceETH"></span> (<span id="priceUSD"></span> USD)
                         </div>
                     </div>
                     
@@ -164,7 +164,7 @@
                                     <th scope="col">Pension</th>
                                     <th scope="col">Gold</th>
                                     <th scope="col">Bitcoin (BTC)</th>
-                                    <th scope="col">Commonwealth (EWLTH)</th>
+                                    <th scope="col">Commonwealth (eWLTH)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -239,14 +239,14 @@
                                 <div class="col-md-6">
                                     <img src="assets/img/phone.png" width="200px" height="200px" />
                                     <h4 class="text-white">I use a Mobile Phone</h4>
-                                    <a class="btn btn-md btn-light rcAll" href="https://youtu.be/PuQBHfKVF2I" target="_blank">Learn More</a>
+                                    <a class="btn btn-md btn-light rcAll" data-toggle="modal" data-target="#mobileUserModal">Learn More</a>
                                     <br />
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <img src="assets/img/computer.png" width="200px" height="200px" />
                                     <h4 class="text-white">I use a Computer</h4>
-                                    <a class="btn btn-md btn-light rcAll" href="https://youtu.be/PuQBHfKVF2I" target="_blank">Learn More</a>
+                                    <a class="btn btn-md btn-light rcAll" data-toggle="modal" data-target="#computerUserModal">Learn More</a>
                                     <br />
                                 </div>
                             </div>
@@ -336,12 +336,12 @@
         <div class="modal" id="buyETHModal">
             <div class="modal-dialog">
                 <div class="modal-content border-white rcAll">
-                    <div class="modal-header bg-primary text-white rcTop">
+                    <div class="modal-header bg-light text-dark rcTop">
                         <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Buy ETH</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
-                    <div class="modal-body bg-primary text-white">
+                    <div class="modal-body bg-light text-dark">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4 text-center">
@@ -430,6 +430,75 @@
                 </div>
             </div>
         
+        <!-- Mobile User Modal -->
+        <div class="modal" id="mobileUserModal">
+            <div class="modal-dialog">
+                <div class="modal-content border-white rcAll">
+                    <div class="modal-header bg-light text-dark rcTop">
+                        <h4 class="modal-title text-dark"><i class="fas fa-long-arrow-alt-right"></i>  Mobile Wallets</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-light text-dark">
+                        <div class="container">
+                            <div class="row">
+                                <p>
+                                    If you use a mobile device like an iPhone or Android to access and manage your cryptos, you will need a good Mobile Wallet with a web3-enabled Dapp Browser in order to use Commonwealth. Below are links to a few recommended wallet solutions for different devices.
+                                </p>
+                            </div>
+                            <br />
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a class="btn btn-block btn-md btn-light rcAll" href="#" target="_blank">Wallet Link</a><br />
+                                    <a class="btn btn-block btn-md btn-light rcAll" href="#" target="_blank">Wallet Link</a><br />
+                                    <a class="btn btn-block btn-md btn-light rcAll" href="#" target="_blank">Wallet Link</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer bg-light text-dark rcBottom">
+                        <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Computer User Modal -->
+        <div class="modal" id="computerUserModal">
+            <div class="modal-dialog">
+                <div class="modal-content border-white rcAll">
+                    <div class="modal-header bg-light text-dark rcTop">
+                        <h4 class="modal-title text-dark"><i class="fas fa-long-arrow-alt-right"></i>  Desktop/Browser Wallets</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-light text-dark">
+                        <div class="container">
+                            <div class="row">
+                                <p>
+                                    If you use a desktop or laptop, you will most likely be using a browser to access and manage your cryptocurrency. To use Commonwealth, you will need a Web3-enabled wallet like the ones listed below. Click on one of the links to install a compatible wallet.
+                                </p>
+                            </div>
+                            <br />
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a class="btn btn-block btn-md btn-light rcAll" href="#" target="_blank">Wallet Link</a><br />
+                                    <a class="btn btn-block btn-md btn-light rcAll" href="#" target="_blank">Wallet Link</a><br />
+                                    <a class="btn btn-block btn-md btn-light rcAll" href="#" target="_blank">Wallet Link</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer bg-light text-dark rcBottom">
+                        <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     
     <!-- Bootstrap core JavaScript -->

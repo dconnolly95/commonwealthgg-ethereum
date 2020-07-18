@@ -55,7 +55,7 @@ $('#buyInput').on('input change', function () {
     var value = parseFloat($(this).val())
     if (value > 0) {
         buyAmount = numberWithCommas((value / buyPrice).toFixed(1))
-        $('#buyAmount').text("Approx. " + buyAmount + " EWLTH")
+        $('#buyAmount').text("Approx. " + buyAmount + " eWLTH")
     } else {
         $('#buyAmount').hide()
     }
