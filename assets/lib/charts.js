@@ -2,20 +2,131 @@ $('.ui.dropdown')
     .dropdown({
         action: 'hide',
         onChange: function(value, text, $selectedItem) {
-            drawChart(value)
+            drawChart(value,true)
             if (value == '100000'){
                 $('#numDays').text('Max')
+                $('#planDays').text('Max')
+            } 
+            else if (value == '365') {
+                $('#numDays').text('1 Year')
+                $('#planDays').text('1 Year')
             } else {
                 $('#numDays').text(value + ' Days')
+                $('#planDays').text(value + ' Days')
             }
+            if (typeof gtag !== 'undefined'){gtag('event', 'Home', {'event_label': 'Usage', 'event_category': 'ChangeRange'});};
         }
     });
 ;
 
+setStats()
 
-function drawChart(days) {
+var chartPrices;
+var possibleInvestment;
+$( "#possibleInvestment" ).on('input', function() {
+    possibleInvestment = $("#possibleInvestment").val()
+    financialPlanner(chartPrices, possibleInvestment)
+    if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'PossibleInvestment'});};
+});
+
+
+function financialPlanner(prices, inputDollar){
+    first = prices[0]
+    last = prices[[prices.length-1]]
+
+    ETCPricePast = first.SizeUSD / first.SizeETC
+    ETCPriceNow = last.SizeUSD / last.SizeETC
+
+    inputETC = inputDollar / ETCPricePast
+
+    TokensPurchased = ( inputDollar / first.Open) 
+    TokenNowValue = (TokensPurchased * last.Open)
+    TokenDiffValue = ((TokenNowValue - inputDollar) / (inputDollar) * 100)
+
+    newDividends = (last.TotalDividends - first.TotalDividends)
+
+    /***
+     * This section is for anything on the /chart.html page that requires prices OHLC AND the global stats. Two seperate calls.
+     */
+    setTimeout(function(){ 
+        myShare = (TokensPurchased / globalStats.P3CSupply)
+        myPossibleDividends = newDividends * myShare    
+        myPossibleDividendsUSD = myPossibleDividends * ETCPriceNow
+
+
+        if (isNaN(myPossibleDividends)){
+            $("#possibleDividends").hide()
+        } else {
+            $("#possibleDividends").show()
+            $("#myPossibleDividendsUSD").text("$"+ numberWithCommas(myPossibleDividendsUSD.toFixed(2)))
+            $('#myPossibleDividendsUSD').transition({
+                animation: 'flash',
+                duration: '.5s',
+            });
+        }
+        $("#myPossibleDividends").text("(" + myPossibleDividends.toFixed(2) + " ETC)")
+        $("#myPossiblePercentage").text((myShare * 100 ).toFixed(4) + "%")
+        $('#myPossiblePercentage').transition({
+            animation: 'flash',
+            duration: '.5s',
+        });
+
+        // Vault Growth Calculator - Only call if useCalculator is Active
+        if (prices !== null && prices[0].SizeETC){
+            vaultDiff = (globalStats.SizeETC - prices[0].SizeETC)
+            $("#vaultDiff").html(numberWithCommas(vaultDiff.toFixed(0)) + " ETC")
+            percentChange = ((globalStats.SizeETC - prices[0].SizeETC) / prices[0].SizeETC * 100 )
+            if (percentChange > 0){
+                $('#pointChange').text(" | +" + percentChange.toFixed(1) + "%")
+                $( "#pointChange" ).addClass("green") 
+                $( "#pointChange" ).removeClass("red") 
+            } else {
+                $('#pointChange').text(" | " + percentChange.toFixed(0) + "%") 
+                $( "#pointChange" ).addClass("red")
+                $( "#pointChange" ).removeClass("green")
+            }
+        }
+    },700);
+
+
+    $("#inputETC").text("(" + inputETC.toFixed(2) + " ETC" + ")")
+    $('#inputETC').transition({
+        animation: 'flash',
+        duration: '.5s',
+    });
+    $("#myPossibleValue").text(numberWithCommas(TokenNowValue.toFixed(2)))
+    $('#myPossibleValue').transition({
+        animation: 'flash',
+        duration: '.5s',
+    });
+    if (TokenDiffValue > 0){
+        $("#myPossibleIncrease").text("(+" + TokenDiffValue.toFixed(0) + "%)")
+        $("#myPossibleIncrease").addClass("green")
+        $("#myPossibleIncrease").removeClass("red")
+        $("#myPossibleValue").addClass("green")
+        $("#myPossibleValue").removeClass("red")
+    } else {
+        $("#myPossibleIncrease").text("(" + TokenDiffValue.toFixed(0) + "%)")
+        $("#myPossibleIncrease").addClass("red")
+        $("#myPossibleIncrease").removeClass("green")
+        $("#myPossibleValue").addClass("red")
+        $("#myPossibleValue").removeClass("green")
+    }
+}
+
+function drawChart(days, useCalculator) {
     d3.selectAll("svg > *").remove();
     d3.json("https://api.commonwealth.gg/chart/ohlc/" + days).then(function (prices) {
+        chartPrices = prices
+        if (useCalculator){
+            if (possibleInvestment == undefined){
+                $("#possibleInvestment").val(500)
+                financialPlanner(prices, 500)
+            } else {
+                financialPlanner(prices, possibleInvestment)
+            }
+        }
+
         const months = {
             0: 'Jan',
             1: 'Feb',
@@ -33,6 +144,7 @@ function drawChart(days) {
 
         var dateFormat = d3.timeParse("%Y-%m-%d");
         for (var i = 0; i < prices.length; i++) {
+
             prices[i]['Date'] = dateFormat(prices[i]['Date'])
         }
 
@@ -243,35 +355,53 @@ function wrap(text, width) {
     });
 }
 
-setStats()
+$('#statsContainer').hide();
+var globalStats
 function setStats() {
     $.getJSON("https://api.commonwealth.gg/chart/info", function (data) {
 		if (data !== null){
+            globalStats = data
+			// (New Number - Original Number) ÷ Original Number × 100.
+			$('#statsContainer').show();
 			P3CSupply = numberWithCommas(Number(data.P3CSupply).toFixed(0))
 			SupplyPercentage = (data.P3CSupply / 204939005.8).toFixed(4) * 100 + "%"
 
 			$("#tokenSupply").replaceWith(P3CSupply)
 			$("#tokenSupplyPercentage").replaceWith(SupplyPercentage)
 
-			Dividends = numberWithCommas(Number(data.TotalDividends).toFixed(2)) + " ETH"
+			Dividends = numberWithCommas(Number(data.TotalDividends).toFixed(2)) + " ETC"
 			DividendsUSD = "$" + numberWithCommas(data.TotalDividendsUSD.toFixed(0))
 			// SupplyPercentage = (data.P3CSupply / 204939005.8).toFixed(4) * 100 + "%"
 
 			$("#totalDividends").replaceWith(Dividends)
 			$("#dividendsUSD").replaceWith(DividendsUSD)
 
-			PriceETH = data.PriceETC.toFixed(4) + " ETH"
+			PriceETC = data.PriceETC.toFixed(4) + " ETC"
 			PriceUSD = "$" + data.PriceUSD.toFixed(4)
 
-			$("#priceETH").replaceWith(PriceETH)
+			$("#priceETC").replaceWith(PriceETC)
 			$("#priceUSD").replaceWith(PriceUSD)
 
-			SizeETH = numberWithCommas(data.SizeETC.toFixed(0)) + " ETH"
+			SizeETC = numberWithCommas(data.SizeETC.toFixed(0)) + " ETC"
 			SizeUSD = "$" + numberWithCommas(data.SizeUSD.toFixed(0))
 
-			$("#sizeETH").replaceWith(SizeETH)
+			$("#sizeETC").replaceWith(SizeETC)
 			$("#sizeUSD").replaceWith(SizeUSD)
-			$("#ethPriceUSD").replaceWith(data.ETHPriceUSD.toFixed(2))
-		}
+			$("#etcPriceUSD").replaceWith(data.ETCPriceUSD.toFixed(2))
+
+			// $('#createdStats').popup({
+			// 	html: 'P3C tokens can <b>only</b> be created by sending Ethereum Classic (ETC) to the contract. There is no central authority that can inflate P3C. Hard cap assumes every ETC possible (210,000,000) is in contract.',
+			// 	position: 'bottom center'
+			// });
+			// $('#priceStats').popup({
+			// 	html: 'Current price of a new P3C token. All tokens are denominated in ETC and feed into the locked fund.',
+			// 	position: 'bottom center'
+			// });
+			// $('#sizeStats').popup({
+			// 	html: 'P3C uses a peer-reviewed <b>bonding curve</b> algorithm to intelligently distribute funds. These funds are only accessible by P3C participants.',
+			// 	position: 'bottom center'
+			// });
+			if (typeof gtag !== 'undefined'){gtag('event', 'Home', {'event_label': 'Usage', 'event_category': 'LoadStats'});};
+        }
 	});
 }
