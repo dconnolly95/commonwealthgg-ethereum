@@ -27,12 +27,12 @@ function activateUI(cropAddress) {
     alertify.confirm().close();
 
     // Address and links 
-    $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
-    $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">https://fluxwallet.me/?ref=' + myCropAddress + '</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://comonwealth.gg/?ref=' + myCropAddress)
-    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
-    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://etherscan.io/address/'+ myCropAddress +'">Explore</a>');
+    $("#copyAddressButton").attr("data-clipboard-text", cropAddress);
+    $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + cropAddress + "</b>")
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/dashboard.html?ref=' + cropAddress + '">https://commonwealth.gg/dashboard.html?ref=' + cropAddress + '</a>')
+    $("#copyMNButton").attr("data-clipboard-text", 'https://comonwealth.gg/dashboard.html?ref=' + cropAddress);
+    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + cropAddress + '&amp;choe=UTF-8" class="rcAll" />');
+    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://etherscan.io/address/'+ cropAddress +'">Explore</a>');
     $('#connectionStatusIndicator').replaceWith('<div class="col text-white text-center"><h4><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> Connected to <b>Ethereum (ETH)</b></h4><br /></div>');
     
     // Enable buttons
