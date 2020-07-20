@@ -19,9 +19,7 @@ function getRainMakerInfo() {
 }
 
 $("#rainMaker").click(function () {
-    rainMaker.reinvest.sendTransaction(
-        // uses your account as ref address
-        web3.eth.accounts[0], 
+    rainMaker.makeItRain.sendTransaction(
         {
             from: web3.eth.accounts[0],
             gasPrice: web3.toWei(1, 'gwei'),
