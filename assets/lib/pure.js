@@ -112,7 +112,7 @@ function buyFromCrop(amountToBuy, referrer) {
             from: web3.eth.accounts[0],
             value: amount,
             gas: 123287,
-            gasPrice: web3.toWei(60, 'gwei')
+            gasPrice: web3.toWei(40, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -133,7 +133,7 @@ function sellFromCrop(amountToSell) {
         {
             from: web3.eth.accounts[0],
             gas: 123287,
-            gasPrice: web3.toWei(60, 'gwei')
+            gasPrice: web3.toWei(40, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -151,7 +151,7 @@ function reinvestFromCrop(referrer) {
         {
             from: web3.eth.accounts[0],
             gas: 128000,
-            gasPrice: web3.toWei(60, 'gwei')
+            gasPrice: web3.toWei(40, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -167,7 +167,7 @@ function withdrawFromCrop() {
     p3cContract.withdraw.sendTransaction({
             from: web3.eth.accounts[0],
             gas: 120000,
-            gasPrice: web3.toWei(60, 'gwei')
+            gasPrice: web3.toWei(40, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -187,7 +187,7 @@ function transferFromCrop(destination, amountToTransfer) {
         amount, {
             from: web3.eth.accounts[0],
             gas: 150000,
-            gasPrice: web3.toWei(60, 'gwei')
+            gasPrice: web3.toWei(40, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
