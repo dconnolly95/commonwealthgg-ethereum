@@ -30,10 +30,11 @@ function activateUI(cropAddress) {
     $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
     $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">https://fluxwallet.me/?ref=' + myCropAddress + '</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://fluxwallet.me/?ref=' + myCropAddress)
+    $("#copyMNButton").attr("data-clipboard-text", 'https://comonwealth.gg/?ref=' + myCropAddress)
     $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
-    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://blockscout.com/etc/mainnet/address/'+ myCropAddress +'">Explore</a>');
-
+    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-sm btn-secondary text-dark rcAll" href="https://etherscan.io/address/'+ myCropAddress +'">Explore</a>');
+    $('#connectionStatusIndicator').replaceWith('<div class="col text-white text-center"><h4><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> Connected to <b>Ethereum (ETH)</b></h4><br /></div>');
+    
     // Enable buttons
     $('#buy').prop("disabled", false);
     $('#sell').prop("disabled", false);
@@ -111,7 +112,7 @@ function buyFromCrop(amountToBuy, referrer) {
             from: web3.eth.accounts[0],
             value: amount,
             gas: 123287,
-            gasPrice: web3.toWei(1, 'gwei')
+            gasPrice: web3.toWei(60, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -132,7 +133,7 @@ function sellFromCrop(amountToSell) {
         {
             from: web3.eth.accounts[0],
             gas: 123287,
-            gasPrice: web3.toWei(1, 'gwei')
+            gasPrice: web3.toWei(60, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -150,7 +151,7 @@ function reinvestFromCrop(referrer) {
         {
             from: web3.eth.accounts[0],
             gas: 128000,
-            gasPrice: web3.toWei(1, 'gwei')
+            gasPrice: web3.toWei(60, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -166,7 +167,7 @@ function withdrawFromCrop() {
     p3cContract.withdraw.sendTransaction({
             from: web3.eth.accounts[0],
             gas: 120000,
-            gasPrice: web3.toWei(1, 'gwei')
+            gasPrice: web3.toWei(60, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
@@ -186,7 +187,7 @@ function transferFromCrop(destination, amountToTransfer) {
         amount, {
             from: web3.eth.accounts[0],
             gas: 150000,
-            gasPrice: web3.toWei(1, 'gwei')
+            gasPrice: web3.toWei(60, 'gwei')
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {

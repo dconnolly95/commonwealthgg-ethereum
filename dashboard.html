@@ -71,6 +71,12 @@
         <main>
             <div class="container">
                 <div class="row">
+                    <div id="connectionStatusIndicator" class="col text-white text-center" style="display: none;">
+                        <h4><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> CONNECTION REQUIRED</h4><br />
+                    </div>
+                </div>
+                
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel border-white rcAll">
                             <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-wallet text-dark"></i> My Wallet</div>
@@ -210,25 +216,12 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center text-dark">
+                                            <br />
                                             <b>Invite your Friends!</b>
                                             <p>When others use your Referral Link to Buy eWLTH, you get a special bonus! Be sure to share it around on all your Social Media!</p>
                                         </div>
                                     </div>
                                     <br />
-                                    
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <a class="btn btn-md btn-block btn-info rcAll" href="https://facebook.com/share.php?u=https://commonwealth.gg"><i class="fab fa-facebook"></i> Facebook</a>
-                                        </div>
-                                        
-                                        <div class="col-md-4 text-center">
-                                            <a class="btn btn-md btn-block btn-light btn-outline-info text-info rcAll" href="https://facebook.com/share.php?u=https://commonwealth.gg"><i class="fab fa-twitter"></i> Twitter</a>
-                                        </div>
-                                        
-                                        <div class="col-md-4 text-center">
-                                            <a class="btn btn-md btn-block btn-light btn-outline-warning text-warning rcAll" href="https://facebook.com/share.php?u=https://commonwealth.gg"><i class="fab fa-reddit"></i> Reddit</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="card-footer glassPanel rcBottom">
@@ -244,8 +237,8 @@
                             </div>
                         </div>
                         <br />
-                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-white"></i> View Market Data Chart</a><br />
                     </div>
+                    
                     <div class="col-md-6">
                             <div class="card glassPanel rcAll">
                                 <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-arrow-right text-warning"></i> Transfer eWLTH</div>
@@ -254,7 +247,7 @@
                                         <div class="row">
                                             <div class="col-md-4 text-left">
                                                 <label>eWLTH to Send</label>
-                                                <input type="text" id="transferTokenCount" placeholder="Amount of Points" class="form-control rcAll">
+                                                <input type="text" id="transferTokenCount" placeholder="Amount of eWLTH" class="form-control rcAll">
                                             </div>
                                             
                                             <div class="col-md-8 text-left text-dark">
@@ -290,6 +283,17 @@
                             <br />
                         </div>
                 </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-white"></i> View Market Data Chart</a>
+                    </div>
+                    
+                    <div class="col text-center">
+                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank"><i class="fas fa-chart-bar text-white"></i> View on EtherScan</a>
+                    </div>
+                </div>
+                <br />
  
                 <div class="row">
                     <div class="col-md-6">
@@ -308,10 +312,13 @@
                             <div class="card-footer glassPanel rcBottom">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col text-center">
                                             <a id="rainMaker" class="btn btn-block btn-sm btn-secondary text-dark rcAll">
                                                 Raise Floor (<span id="rainMakerDividends"></span> ETH)
                                             </a>
+                                        </div>
+                                        <div class="col text-center">
+                                            <a class="btn btn-block btn-sm btn-info rcAll" href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -504,6 +511,8 @@
         <script src="assets/js/clipboard.min.js"></script>
         <script src="assets/js/lodash.min.js"></script>
         
+        <script src="assets/lib/metamask-adapter.js"></script>
+        
         <script src="assets/lib/util.js"></script>
         <script src="assets/lib/home.js"></script>
         <script src="assets/lib/contracts.js"></script>
@@ -514,6 +523,5 @@
         <script src="assets/lib/use.js"></script>
         <script src="assets/lib/charts.js"></script>
         <script src="assets/lib/prices.js"></script>
-        <script src="assets/lib/loader.js"></script>
     </body>
 </html>

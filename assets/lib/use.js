@@ -30,12 +30,12 @@ $("#sell").click(function () {
     sellFromCrop(amountToSell)
 })
 
-$("#reinvest").click(function () {
-    reinvestFromCrop(masternode)
-})
-
 $("#withdraw").click(function () {
     withdrawFromCrop()
+})
+
+$("#reinvest").click(function () {
+    reinvestFromCrop()
 })
 
 $("#transfer").click(function () {
