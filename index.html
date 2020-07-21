@@ -41,7 +41,7 @@
 
     <body class="wallpaper wlthFont">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-gradient-icon.png" width="30px" height="30px" /> commonwealth.gg</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -78,32 +78,42 @@
                 <div class="row">
                     <div class="col text-center">
                         <div class="jumbotron clearPanel rcAll text-white">
-                            <div class="col text-center">
-                                <img src="assets/img/wlth-icon-white.png" width="150px" height="150px" />
-                                <h1 class="text-white display-4">commonwealth.gg</h1>
-                                <p class="text-white">The World&apos;s Saving Fund on Ethereum</p>
-                                <a class="btn btn-light btn-lg rcAll" href="dashboard.html"><i class="fas fa-wallet"></i> Web Wallet</a>
-                                <a class="btn btn-light btn-lg rcAll" href="chart.html"><i class="fas fa-chart-bar"></i> Chart</a>
-                                <a class="btn btn-light btn-lg rcAll" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img src="assets/img/wlth-icon-white.png" width="150px" height="150px" />
+                                    <h1 class="text-white">commonwealth.gg</h1>
+                                    <p class="text-white">The World&apos;s Saving Fund on Ethereum</p><br />
+                                </div>
+                            </div>   
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <a class="btn btn-light btn-md btn-block rcAll" href="dashboard.html"><i class="fas fa-wallet"></i> Web Wallet</a><br />
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <a class="btn btn-light btn-md btn-block rcAll" href="chart.html"><i class="fas fa-chart-bar"></i> Chart</a><br />
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <a class="btn btn-light btn-md btn-block rcAll" href="about.html"><i class="fas fa-info-circle"></i> About</a><br />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col text-center">
+                    <div class="col-md-4 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong><i class="fas fa-piggy-bank"></i> Vault: </strong> <span id="sizeETC"></span> (<span id="sizeUSD"></span> USD)
                         </div>
                     </div>
                     
-                    <div class="col text-center">
+                    <div class="col-md-4 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong><i class="fas fa-dollar-sign"></i> eWLTH Price: </strong> <span id="priceETC"></span> (<span id="priceUSD"></span> USD)
                         </div>
                     </div>
                     
-                    <div class="col text-center">
+                    <div class="col-md-4 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong><i class="fas fa-hand-holding-usd"></i> Dividends: </strong> <span id="totalDividends"></span> (<span id="dividendsUSD"></span> USD)
                         </div>

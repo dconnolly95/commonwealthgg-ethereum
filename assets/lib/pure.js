@@ -11,14 +11,7 @@ var myCropDisabled;
 
 
 function getMyCrop() {
-    setTimeout(function () {
-        //checks if web3 is loaded, but not logged in on saturn
-        if (web3.eth.accounts[0] === undefined) { 
-            alertify.error('Not connected to Commonwealth.')
-        } else {
-            alertify.success('Connected to Commonwealth.')
-        }
-    }, 1000)
+    setTimeout(function () {if (web3.eth.accounts[0] === undefined) {alertify.error('Not connected to Commonwealth.')} else {alertify.success('Connected to Commonwealth.')}}, 1000)
     myCropAddress = web3.toChecksumAddress(web3.eth.accounts[0])
     activateUI(myCropAddress)
 }
@@ -28,11 +21,15 @@ function activateUI(cropAddress) {
 
     // Address and links 
     $("#copyAddressButton").attr("data-clipboard-text", cropAddress);
-    $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + cropAddress + "</b>")
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/dashboard.html?ref=' + cropAddress + '">https://commonwealth.gg/dashboard.html?ref=' + cropAddress + '</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://comonwealth.gg/dashboard.html?ref=' + cropAddress);
-    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + cropAddress + '&amp;choe=UTF-8" class="rcAll" />');
-    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-md btn-secondary text-dark rcAll" href="https://etherscan.io/address/'+ cropAddress +'">Explore</a>');
+    $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
+    
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/dashboard.html?ref=' + myCropAddress + '">https://commonwealth.gg/dashboard.html?ref=' + myCropAddress + '</a>')
+    $("#copyMNButton").attr("data-clipboard-text", 'https://commonwealth.gg/dashboard.html?ref=' + myCropAddress);
+    
+    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
+    
+    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-md btn-secondary text-dark rcAll" href="https://etherscan.io/address/'+ myCropAddress +'">Explore</a>');
+    
     $('#connectionStatusIndicator').replaceWith('<div class="col text-white text-center"><h4><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> Connected to <b>Ethereum (ETH)</b></h4><br /></div>');
     
     // Enable buttons
@@ -54,22 +51,15 @@ function disableUI() {
 
 var myCropDividends = 0;
 function getMyCropDividends() {
-    p3cContract.myDividends.call(
-        true, 
-        function (err, result) {
+    p3cContract.myDividends.call(true, function (err, result) {
         if (!err) {
             change = (String(myCropDividends) !== String(result))
             myCropDividends = result;
-            if (Number(myCropDividends) == 0){
-                $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + "0" + "</b>")
-            }
+            if (Number(myCropDividends) == 0){$("#myCropDividends").replaceWith("<b id='myCropDividends'>" + "0" + "</b>")}
             if (change) {
                 amount = web3.fromWei(myCropDividends).toFixed(3)
                 $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + amount  + "</b>")
-                $('#myCropDividends').transition({
-                    animation: 'flash',
-                    duration: '1s',
-                });
+                $('#myCropDividends').transition({animation: 'flash', duration: '1s',});
             }
         }
     });
@@ -88,10 +78,7 @@ function getMyCropTokens() {
                     myETHValue = (sellPrice * web3.fromWei(myCropTokens))
                     $('#myETHValue').text(numberWithCommas(myETHValue.toFixed(1)))
                 })
-                $('#myCropTokens').transition({
-                    animation: 'flash',
-                    duration: '1s',
-                });
+                $('#myCropTokens').transition({animation: 'flash', duration: '1s',});
             }
         }
     });
@@ -106,96 +93,54 @@ function getCropInfo() {
 // This buys eWLTH from the crop, but with you as the referrer
 function buyFromCrop(amountToBuy, referrer) {
     amount = web3.toWei(amountToBuy)
-    p3cContract.buy.sendTransaction(
-        // your crop is the referrer
-        referrer, {
-            from: web3.eth.accounts[0],
-            value: amount,
-            gas: 123287,
-            gasPrice: web3.toWei(40, 'gwei')
-        },
-        function (error, result) { //get callback from function which is your transaction key
-            if (!error) {
-                alertify.success(amountToBuy + " ETH spent. Waiting for Blockchain.")
-            } else {
-                console.log(error);
-            }
-        }
-    )
+    p3cContract.buy.sendTransaction(referrer, {from: web3.eth.accounts[0], value: amount}, function (error, result) { //get callback from function which is your transaction key
+        if (!error) {alertify.success(amountToBuy + " ETH spent. Waiting for Blockchain.")} else {console.log(error);}
+    })
 }
 
 // This buys eWLTH from the crop, but with you as the referrer
 function sellFromCrop(amountToSell) {
     amount = web3.toWei(amountToSell)
-    p3cContract.sell.sendTransaction(
-        // you are the referer
-        amount, 
-        {
-            from: web3.eth.accounts[0],
-            gas: 123287,
-            gasPrice: web3.toWei(40, 'gwei')
-        },
-        function (error, result) { //get callback from function which is your transaction key
-            if (!error) {
-                alertify.success(amountToSell + " eWLTH Sold. Waiting for Blockchain.")
-                console.log(result);
-            } else {
-                console.log(error);
-            }
+    p3cContract.sell.sendTransaction(amount, {from: web3.eth.accounts[0]}, function (error, result) {
+        if (!error) {
+            alertify.success(amountToSell + " eWLTH Sold. Waiting for Blockchain.")
+            console.log(result);
+        } else {
+            console.log(error);
         }
-    )
-}
-
-function reinvestFromCrop(referrer) {
-    p3cContract.reinvest.sendTransaction(
-        {
-            from: web3.eth.accounts[0],
-            gas: 128000,
-            gasPrice: web3.toWei(40, 'gwei')
-        },
-        function (error, result) { //get callback from function which is your transaction key
-            if (!error) {
-                alertify.success("Reinvested eWLTH. Waiting for Blockchain.")
-                console.log(result);
-            } else {
-                console.log(error);
-            }
     })
 }
 
-function withdrawFromCrop() {
-    p3cContract.withdraw.sendTransaction({
-            from: web3.eth.accounts[0],
-            gas: 120000,
-            gasPrice: web3.toWei(40, 'gwei')
-        },
-        function (error, result) { //get callback from function which is your transaction key
-            if (!error) {
-                alertify.success("Withdrawing dividends to your ETH wallet.")
-                console.log(result);
-            } else {
-                console.log(error);
-            }
+function reinvestFromCrop(referrer) {
+    p3cContract.reinvest.sendTransaction({from: web3.eth.accounts[0]}, function (error, result) {
+        if (!error) {
+            alertify.success("Reinvested eWLTH. Waiting for Blockchain.")
+            console.log(result);
+        } else {
+            console.log(error);
         }
-    )
+    })
+}
+
+function withdrawFromCrop() {p3cContract.withdraw.sendTransaction({from: web3.eth.accounts[0]}, function (error, result) {
+    if (!error) {
+        alertify.success("Withdrawing dividends to your ETH wallet.")
+        console.log(result);
+    } else {
+        console.log(error);
+    }
+    })
 }
 
 function transferFromCrop(destination, amountToTransfer) {
     amount = web3.toWei(amountToTransfer)
-    p3cContract.transfer.sendTransaction(
-        destination,
-        amount, {
-            from: web3.eth.accounts[0],
-            gas: 150000,
-            gasPrice: web3.toWei(40, 'gwei')
-        },
-        function (error, result) { //get callback from function which is your transaction key
-            if (!error) {
-                alertify.success("Transferring " + amountToTransfer + " eWLTH to " + destination.substring(0, 7) + "...")
-                console.log(result);
-            } else {
-                console.log(error);
-            }
+    p3cContract.transfer.sendTransaction(destination, amount, {from: web3.eth.accounts[0]}, function (error, result) {
+        // get callback from function which is your transaction key
+        if (!error) {
+            alertify.success("Transferring " + amountToTransfer + " eWLTH to " + destination.substring(0, 7) + "...")
+            console.log(result);
+        } else {
+            console.log(error);
         }
-    )
+    })
 }

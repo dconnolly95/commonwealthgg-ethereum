@@ -41,7 +41,7 @@
 
     <body class="wallpaper">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-gradient-icon.png" width="30px" height="30px" /> commonwealth.gg</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -73,25 +73,25 @@
         <main role="main">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center">
+                    <div class="col-md-3 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong><i class="fas fa-piggy-bank"></i> Vault: </strong> <span id="sizeETH"></span> (<span id="sizeUSD"></span> USD)
                         </div>
                     </div>
                     
-                    <div class="col text-center">
+                    <div class="col-md-3 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong><i class="fas fa-dollar-sign"></i> eWLTH Price: </strong> <span id="priceETH"></span> (<span id="priceUSD"></span> USD)
                         </div>
                     </div>
                     
-                    <div class="col text-center">
+                    <div class="col-md-3 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong><i class="fas fa-hand-holding-usd"></i> Dividends: </strong> <span id="totalDividends"></span> (<span id="dividendsUSD"></span> USD)
                         </div>
                     </div>
                     
-                    <div class="col text-center">
+                    <div class="col-md-3 text-center">
                         <label class="text-white">History to View</label>
                         <div id="timeFrame" class="ui selection dropdown">
                                 <input>
@@ -109,6 +109,7 @@
                             </div>
                     </div>
                 </div>
+                <br />
                 
                 <div class="container">
                     <div class="row">
@@ -328,7 +329,6 @@
     
     <script src="assets/lib/metamask-adapter.js"></script>
     <script src="assets/lib/contracts.js"></script>
-    <script src="assets/lib/sponsor.js"></script>
     
     <script src="assets/lib/util.js"></script>
     <script src="assets/lib/charts.js"></script>
