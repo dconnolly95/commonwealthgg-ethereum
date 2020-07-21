@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="row">
                     <div id="connectionStatusIndicator" class="col text-white text-center" style="display: none;">
-                        <h4><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> CONNECTION REQUIRED</h4><br />
+                        <h4><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> CONNECTION REQUIRED</h4><br />
                     </div>
                 </div>
                 
@@ -85,30 +85,21 @@
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col col-sm-6 text-center">
-                                            <h3 class="text-dark">
-                                                <span id="myTokensValue" class="text-dark"></span> USD
-                                            </h3>
+                                        <div class="col text-center">
+                                            <h3><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="myCropTokens"></span></h3>
+                                            <p>
+                                                <span id="myTokensValue" class="text-dark"></span> USD<br />
+                                                <span class="text-dark">My Balance</span>
+                                            </p>
                                             
-                                            <h4>
-                                                <img src="assets/img/wlth-gradient-coin.png" width="20px" height="20px" />
-                                                <span id="myCropTokens"></span> eWLTH
-                                            </h4>
-                                            <span class="text-muted">My Balance</span>
-                                            <br />
                                         </div>
                                         
-                                        <div class="col col-sm-6 text-center">
-                                            <h3 class="text-dark">
-                                                <span id="myDividendsValue"></span> USD
-                                            </h3>
-                                            
-                                            <h4>
-                                                <img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" />
-                                                <span id="myCropDividends"></span> ETH
-                                            </h4>
-                                            <span class="text-muted">My Dividends</span>
-                                            <br />
+                                        <div class="col text-center">
+                                            <h3 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myCropDividends"></span></h3>
+                                            <p>
+                                                <span id="myDividendsValue"></span> USD<br />
+                                                <span class="text-dark">My Dividends</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +128,7 @@
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4 class="text-dark">
-                                                <img src="assets/img/wlth-gradient-coin.png" width="20px" height="20px" /> 1 = <span class="text-success"><span id="tokenUSDBuyPrice"></span> USD</span>
+                                                <img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> 1 = <span class="text-success"><span id="tokenUSDBuyPrice"></span> USD</span>
                                             </h4>
                                             <small class="text-dark"><span id="tokenBuyGet">0.0000</span></small><br />
                                         </div>
@@ -176,7 +167,7 @@
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4 class="text-dark">
-                                                <img src="assets/img/wlth-gradient-coin.png" width="20px" height="20px" /> 1 = <span class="text-danger"><span id="tokenUSDSellPrice"></span> USD</span>
+                                                <img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> 1 = <span class="text-danger"><span id="tokenUSDSellPrice"></span> USD</span>
                                             </h4>
                                             <small class="text-dark"><span id="tokenSellGet">0.0000</span></small><br />
                                         </div>
@@ -218,7 +209,6 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center text-dark">
-                                            <br />
                                             <b>Invite your Friends!</b>
                                             <p>When others use your Referral Link to Buy eWLTH, you get a special bonus! Be sure to share it around on all your Social Media!</p>
                                         </div>
@@ -250,18 +240,13 @@
                                             <div class="col-md-4 text-left">
                                                 <label>eWLTH to Send</label>
                                                 <input type="text" id="transferTokenCount" placeholder="Amount of eWLTH" class="form-control rcAll">
+                                                <br />
                                             </div>
                                             
                                             <div class="col-md-8 text-left text-dark">
                                                 <label>Recipient Address</label>
                                                 <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
-                                            </div>
-                                        </div>
-                                        <br />
-                                        
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <b>Please ensure details are correct before transferring!</b>
+                                                <br />
                                             </div>
                                         </div>
                                     </div>
@@ -287,12 +272,12 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-white"></i> View Market Data Chart</a>
+                    <div class="col-md-6 text-center">
+                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-dark"></i> View Market Data Chart</a><br />
                     </div>
                     
-                    <div class="col text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank"><i class="fas fa-chart-bar text-white"></i> View on EtherScan</a>
+                    <div class="col-md-6 text-center">
+                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank"><i class="fas fa-search-dollar text-dark"></i> View on EtherScan</a>
                     </div>
                 </div>
                 <br />
@@ -305,8 +290,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark"><img src="assets/img/wlth-gradient-coin.png" width="20px" height="20px" /> <span id="rainMakerTokens"></span> eWLTH</h4>
-                                            <p>The Price Floor provides a guaranteed minimum value for eWLTH!</p>
+                                            <h4 class="text-dark"><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="rainMakerTokens"></span> eWLTH</h4>
+                                            <p>The Price Floor provides a guaranteed minimum value for eWLTH!<br />
+                                                <small><a href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn More</a></small>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -319,9 +306,6 @@
                                                 Raise Floor (<span id="rainMakerDividends"></span> ETH)
                                             </a>
                                         </div>
-                                        <div class="col text-center">
-                                            <a class="btn btn-block -md btn-info rcAll" href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn More</a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -331,12 +315,12 @@
                     
                     <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-dark">Your HODL</div>
+                            <div class="card-header glassPanel rcTop text-dark">Your Portfolio</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> <span id="myETHValue">0</span> ETH</h4>
+                                            <h4 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myETHValue">0</span> ETH</h4>
                                             <p>Approx Value</p>
                                         </div>
                                     </div>
@@ -362,7 +346,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> <span id="etcInContract">0</span></h4>
+                                            <h4 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="etcInContract">0</span></h4>
                                             <p>In the Contract</p>
                                         </div>
                                     </div>
