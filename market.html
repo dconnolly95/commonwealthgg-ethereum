@@ -13,7 +13,7 @@
         <meta property="og:description" content="The World's Saving Fund on Ethereum" />
         <meta property="og:image" content="https://commonwealth.gg/img/coin.png" />
         
-        <title>Charts &amp; Info | commonwealth.gg</title>
+        <title>About | commonwealth.gg</title>
         
         <meta charset="utf8">
         <meta name="description" content="The World's Saving Fund on Ethereum">
@@ -74,52 +74,88 @@
         <main role="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong><i class="fas fa-piggy-bank"></i> Vault: </strong> <span id="sizeETH"></span> (<span id="sizeUSD"></span> USD)
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong><i class="fas fa-dollar-sign"></i> eWLTH Price: </strong> <span id="priceETH"></span> (<span id="priceUSD"></span> USD)
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong><i class="fas fa-hand-holding-usd"></i> Dividends: </strong> <span id="totalDividends"></span> (<span id="dividendsUSD"></span> USD)
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 text-center">
-                        <label class="text-white">History to View</label>
-                        <div id="timeFrame" class="ui selection dropdown">
-                                <input>
-                                <i class="dropdown icon"></i>
-                                <div>
-                                    <b>Price</b><span class="ui green text">&nbsp;| <span id="numDays">90 Days</span></span>
-                                </div>
-                                <div class="menu">
-                                    <div class="item" data-value="30">30 Days</div>
-                                    <div class="item" data-value="90">90 Days</div>
-                                    <div class="item" data-value="180">6 Months</div>
-                                    <div class="item" data-value="365">1 Year</div>
-                                    <div class="item" data-value="100000">Max</div>
-                                </div>
-                            </div>
+                    <div class="col text-center">
+                        <img src="assets/img/wlth-icon-white.png" width="150px" height="150px" />
+                        <h1 class="text-white">commonwealth.gg</h1>
+                        <p class="text-white">The World&apos;s Saving Fund on Ethereum</p>
                     </div>
                 </div>
                 <br />
                 
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-center glassPanel text-dark rcAll">
-                            <svg id="container"></svg><br />
-                            <a href="https://www.xenobank.com/" class="text-success text-center" target="_blank" style="font-size:10px;">(More  Data at Xenobank.com)</a>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>WLTH Price:</strong> <span id="WLTHpriceETC">0</span> / <span id="WLTHpriceUSD">0</span> USD
                         </div>
                     </div>
-                    <br />
+                    
+                    <div class="col-md-6 text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>eWLTH Price:</strong> <span id="EWLTHpriceETH">0</span> / <span id="EWLTHpriceUSD">0</span> USD
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>ETC Vault: </strong> <span id="WLTHsizeETC">0</span> / <span id="WLTHsizeUSD">0</span> USD
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>ETH Vault: </strong> <span id="EWLTHsizeETH">0</span> / <span id="EWLTHsizeUSD">0</span> USD
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>Dividends Paid: </strong><span id="totalWLTHDividends">0</span> / <span id="totalEWLTHDividends">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>Circulation: </strong><span id="totalWLTHSupply">0</span> WLTH / <span id="totalEWLTHSupply">0</span> eWLTH
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>ETC Price (USD):</strong> $<span id="etcPriceUSD">0</span> USD
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            <strong>ETH Price (USD):</strong> $<span id="ethPriceUSD">0</span> USD
+                        </div>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <a class="btn btn-block btn-md btn-success rcAll" href="https://commonwealth.gg/use.html"><i class="fas fa-arrow-right"></i> Commonwealth.gg WLTH (ETC)</a>
+                    </div>
+                    
+                    <div class="col-md-6 text-center">
+                        <a class="btn btn-block btn-md btn-light rcAll" href="dashboard.html"><i class="fas fa-arrow-right"></i> Commonwealth.gg eWLTH (ETH)</a>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <script src="https://widget.changelly.com/affiliate.js"></script> <iframe src="https://widget.changelly.com?from=btc,usd,bnb,btt,dai,doge,eos,etc,gusd,iost,knc,mkr,pax,tusd,usdc,usdt,xlm,xtz,eur,gbp&to=eth&amount=1&address=0x5c79CaEFeAB641eB667Ee9dcb82c5e9D211eca73&fromDefault=btc&toDefault=eth&theme=default&merchant_id=9ep4xrdt9b5e9h9a&payment_id=&v=2" width="100%" height="600" class="changelly" scrolling="no" onLoad="function at(t){var e=t.target,i=e.parentNode,n=e.contentWindow,r=function(){return n.postMessage({width:i.offsetWidth},'https://widget.changelly.com')};window.addEventListener('resize',r),r()};at.apply(this, arguments);" style="min-width: 100%; width: 100px; overflow-y: hidden; border: none">Can't load widget</iframe>
+                    </div>
                 </div>
             </div>
         </main>
@@ -149,27 +185,18 @@
         </nav>
     </body>
     
-    <!-- Bootstrap core JavaScript -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-        
-    <script src="assets/js/jquery.lazyload.min.js"></script>
-    <script src="assets/js/jquery.validation.min.js"></script>
-    <script src="assets/js/tether.min.js"></script>
-    <script src="assets/js/common.min.js"></script>
-    <script src="assets/js/d3.v5.min.js"></script>
-    <script src="assets/js/alertify.min.js"></script>
-    <script src="assets/js/semantic.min.js"></script>
-    <script src="assets/js/moment.min.js"></script>
+    
     <script src="assets/js/web3.min.js"></script>
-    <script src="assets/js/clipboard.min.js"></script>
-    <script src="assets/js/lodash.min.js"></script>
+    <script src="assets/js/ethereumjs.min.js"></script>
+    <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
     
     <script src="assets/lib/metamask-adapter.js"></script>
     <script src="assets/lib/contracts.js"></script>
-    
     <script src="assets/lib/util.js"></script>
-    <script src="assets/lib/charts.js"></script>
-    <script>drawChart(180,true);</script>
+    <script src="assets/lib/compare.js"></script>
+    <script>getCommonwealthData();</script>
 </html>
