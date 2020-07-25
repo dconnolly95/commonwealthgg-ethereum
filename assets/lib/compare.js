@@ -44,6 +44,48 @@ function getCommonwealthData() {
 	});
 }
 
+function getCheapestInvestmentOption() {
+    var OPTION1_VALUE;
+    var OPTION2_VALUE;
+    
+    var cheapestName;
+    var cheapestSymbol;
+    
+    // ETC
+    $.getJSON(WLTH_API_URL, function (etc_result) {
+        if (etc_result !== null) {
+            WLTH_OPTION = etc_result.PriceUSD.toFixed(4);
+            OPTION1_VALUE = WLTH_OPTION;
+        } else {
+            WLTH_OPTION = 0.00;
+            OPTION1_VALUE = WLTH_OPTION;
+        }
+    });
+    
+    // ETH
+    $.getJSON(EWLTH_API_URL, function (eth_result) {
+        if (eth_result !== null) {
+            EWLTH_OPTION = eth_result.PriceUSD.toFixed(4);
+            OPTION2_VALUE = EWLTH_OPTION;
+        } else {
+            EWLTH_OPTION = 0.00;
+            OPTION2_VALUE = EWLTH_OPTION;
+        }
+    });
+
+    // IF WLTH IS CHEAPER THAN eWLTH
+    if (OPTION1_VALUE < OPTION2_VALUE) {
+        cheapestName = "WLTH";
+        cheapestSymbol = "ETC";
+    } else {
+        cheapestName = "eWLTH";
+        cheapestSymbol = "ETH";
+    }
+    
+    $("#cheapestName").replaceWith(cheapestName);
+    $("#cheapestSymbol").replaceWith(cheapestSymbol);
+}
+
 function setWLTHInfo() {
     $("#totalWLTHSupply").replaceWith(WLTHSupply);
     $("#totalWLTHDividends").replaceWith(WLTHDividends);

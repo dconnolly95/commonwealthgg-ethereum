@@ -177,7 +177,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <h3 class="text-white"><i>How does Commonwealth diversify my savings?</i></h3>
-                        <table class="table table-hover">
+                        <table id="comparisonTable" class="table table-hover">
                             <thead>
                                 <tr class="table-light">
                                     <th scope="col"> </th>
@@ -510,9 +510,11 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.dataTables.min.js"></script>
         
     <script src="assets/js/jquery.lazyload.min.js"></script>
     <script src="assets/js/jquery.validation.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/tether.min.js"></script>
     <script src="assets/js/common.min.js"></script>
     <script src="assets/js/d3.v5.min.js"></script>
@@ -529,4 +531,14 @@
     <script src="assets/lib/contracts.js"></script>
     <script src="assets/lib/masternode.js"></script>
     <script src="assets/lib/home.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#comparisonTable').DataTable( {
+                "paging":   false,
+                "ordering": false,
+                "info":     false,
+                "searching":   false
+            } );
+        });
+    </script>
 </html>

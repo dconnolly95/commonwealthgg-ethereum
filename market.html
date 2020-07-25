@@ -128,6 +128,14 @@
                 </div>
                 
                 <div class="row">
+                    <div class="col text-center">
+                        <div class="alert alert-light text-center rcAll">
+                            Right now, <strong><span id="cheapestName">x</span> (<i><span id="cheapestSymbol">y</span></i>)</strong> is the cheaper fund to invest in.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
                     <div class="col-md-6 text-center">
                         <div class="alert alert-light text-center rcAll">
                             <strong>ETC Price (USD):</strong> $<span id="etcPriceUSD">0</span> USD
@@ -224,4 +232,5 @@
     <script src="assets/lib/util.js"></script>
     <script src="assets/lib/compare.js"></script>
     <script>getCommonwealthData();</script>
+    <script>getCheapestInvestmentOption();</script>
 </html>
