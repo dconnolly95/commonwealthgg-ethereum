@@ -50,6 +50,8 @@ function getCheapestInvestmentOption() {
     
     var cheapestName;
     var cheapestSymbol;
+    var moreExpensiveName;
+    var moreExpensiveSymbol;
     
     // ETC
     $.getJSON(WLTH_API_URL, function (etc_result) {
@@ -77,13 +79,19 @@ function getCheapestInvestmentOption() {
     if (OPTION1_VALUE < OPTION2_VALUE) {
         cheapestName = "WLTH";
         cheapestSymbol = "ETC";
+        moreExpensiveName = "eWLTH";
+        moreExpensiveSymbol = "ETH";
     } else {
         cheapestName = "eWLTH";
         cheapestSymbol = "ETH";
+        moreExpensiveName = "WLTH";
+        moreExpensiveSymbol = "ETC";
     }
     
     $("#cheapestName").replaceWith(cheapestName);
     $("#cheapestSymbol").replaceWith(cheapestSymbol);
+    $("#moreExpensiveName").replaceWith(moreExpensiveName);
+    $("#moreExpensiveSymbol").replaceWith(moreExpensiveSymbol);
 }
 
 function setWLTHInfo() {
