@@ -23,8 +23,8 @@ function activateUI(cropAddress) {
     $("#copyAddressButton").attr("data-clipboard-text", cropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
     
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/dashboard.html?ref=' + myCropAddress + '">https://commonwealth.gg/dashboard.html?ref=' + myCropAddress + '</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://commonwealth.gg/dashboard.html?ref=' + myCropAddress);
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/dashboard.html?ref=' + myCropAddress + '">https://eth.commonwealth.gg/dashboard.html?ref=' + myCropAddress + '</a>')
+    $("#copyMNButton").attr("data-clipboard-text", 'https://eth.commonwealth.gg/dashboard.html?ref=' + myCropAddress);
     
     $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
     

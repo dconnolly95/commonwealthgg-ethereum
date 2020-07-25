@@ -1,10 +1,23 @@
 // if saturn isn't installed 
 if (typeof web3 == 'undefined') {
-    displayError(
+    alertify.confirm(
+        'Welcome to Commonwealth.gg!',
         `
-        <span>To Use, Install an <a target="_blank" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">ETH Wallet</a></span>
-        `
-    )
+            <h1 id="loginWarning" class="login-warning">Login to your Wallet, and refresh!</h1>
+            <p id="agreement" class="agreement">
+                Hello, and thank you for visiting Commonwealth.gg eWLTH! Before you can continue, you need to login to your wallet and ensure it is unlocked - that way, you can manage your eWLTH and Dividends. If you have any troubles, please join our <a href="#">Discord Server</a> and ask for assistance in the <b>Help Channel</b>.
+            </p>
+        `,
+        //if ok deploy the crop
+        function () {
+            
+        },
+        // if cancel disable everything
+        function () {
+            alertify.defaults.notifier.delay = 10000
+            alertify.error('<h3>View Mode.</h3>')
+        }).set({labels: {ok: 'Accept'}});
+    
 } else {
     getCropInfo()
     getRainMakerInfo()
