@@ -33,7 +33,7 @@ function getCommonwealthData() {
             EWLTHDividends = numberWithCommas(Number(ewlth.TotalDividends).toFixed(2)) + " ETH";
             
             if (ewlth.TotalDividendsUSD === 'null') {
-                EWLTHDividendsUSD = "$" + numberWithCommas(ewlth.TotalDividendsUSD.toFixed(0));
+                EWLTHDividendsUSD = "$" + numberWithCommas(ewlth.TotalDividendsUSD.toFixed(2));
             } else {
                 EWLTHDividendsUSD = "$0.00";
             }
@@ -44,54 +44,31 @@ function getCommonwealthData() {
 	});
 }
 
-function getCheapestInvestmentOption() {
-    var OPTION1_VALUE;
-    var OPTION2_VALUE;
-    
-    var cheapestName;
-    var cheapestSymbol;
-    var moreExpensiveName;
-    var moreExpensiveSymbol;
-    
+function getCheapestInvestmentOption() {    
     // ETC
     $.getJSON(WLTH_API_URL, function (etc_result) {
-        if (etc_result !== null) {
-            WLTH_OPTION = etc_result.PriceUSD.toFixed(4);
-            OPTION1_VALUE = WLTH_OPTION;
-        } else {
-            WLTH_OPTION = 0.00;
-            OPTION1_VALUE = WLTH_OPTION;
-        }
+        $.getJSON(EWLTH_API_URL, function (eth_result) {
+            if (etc_result !== null && eth_result !== null) {
+                var WLTH_USD = etc_result.PriceUSD.toFixed(4);
+                var EWLTH_USD = eth_result.PriceUSD.toFixed(4);
+                console.log("WLTH (ETC) costs $" + WLTH_USD + " USD");
+                console.log("eWLTH (ETH) costs $" + EWLTH_USD + " USD");
+                // IF WLTH IS CHEAPER THAN eWLTH
+                if (WLTH_USD < EWLTH_USD) {
+                    optionDisplayString = "Right now, <span class='text-success'>WLTH (ETC)</span> is cheaper than <span class='text-info'>eWLTH (ETH)</span>.";
+                    $("#cheapestAssetRightNow").replaceWith(optionDisplayString);
+                } else {
+                    optionDisplayString = "Right now, <span class='text-info'>eWLTH (ETH)</span> is cheaper than <span class='text-success'>WLTH (ETC)</span>.";
+                    $("#cheapestAssetRightNow").replaceWith(optionDisplayString);
+                }
+            }
+        });
     });
     
     // ETH
-    $.getJSON(EWLTH_API_URL, function (eth_result) {
-        if (eth_result !== null) {
-            EWLTH_OPTION = eth_result.PriceUSD.toFixed(4);
-            OPTION2_VALUE = EWLTH_OPTION;
-        } else {
-            EWLTH_OPTION = 0.00;
-            OPTION2_VALUE = EWLTH_OPTION;
-        }
-    });
-
-    // IF WLTH IS CHEAPER THAN eWLTH
-    if (OPTION1_VALUE < OPTION2_VALUE) {
-        cheapestName = "WLTH";
-        cheapestSymbol = "ETC";
-        moreExpensiveName = "eWLTH";
-        moreExpensiveSymbol = "ETH";
-    } else {
-        cheapestName = "eWLTH";
-        cheapestSymbol = "ETH";
-        moreExpensiveName = "WLTH";
-        moreExpensiveSymbol = "ETC";
-    }
     
-    $("#cheapestName").replaceWith(cheapestName);
-    $("#cheapestSymbol").replaceWith(cheapestSymbol);
-    $("#moreExpensiveName").replaceWith(moreExpensiveName);
-    $("#moreExpensiveSymbol").replaceWith(moreExpensiveSymbol);
+    
+    
 }
 
 function setWLTHInfo() {
