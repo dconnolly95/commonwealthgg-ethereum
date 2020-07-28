@@ -10,7 +10,7 @@ function setStats() {
 			P3CSupply = numberWithCommas(Number(data.P3CSupply).toFixed(0))
             Dividends = numberWithCommas(Number(data.TotalDividends).toFixed(2)) + " ETH"
             
-            if (data.TotalDividendsUSD == 'null') {
+            if (data.TotalDividendsUSD !== 'null') {
                 DividendsUSD = "$" + numberWithCommas(data.TotalDividendsUSD.toFixed(0))
             } else {
                 DividendsUSD = "$0.00"
