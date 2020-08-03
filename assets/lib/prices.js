@@ -57,9 +57,9 @@ function setDividendsPrice(usdPrice){
 }
 
 function updateEtcPrice(portfolio) {
-  $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function (result) {
+  $.getJSON('https://api.commonwealth.gg/eth/chart/info', function (result) {
     if (result !== null){
-      var usd = result.USD
+      var usd = result.ETCPriceUSD
       usdPrice = parseFloat(usd)
       setBuyPrice(usdPrice)
       setSellPrice(usdPrice)

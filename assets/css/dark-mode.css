@@ -1,0 +1,59 @@
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+    color: #fff;
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #000000 !important;
+}
+
+[data-theme="dark"] .glassPanel {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .alert-light {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .btn-light {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .btn-secondary {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .alert-success {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .nav-link {
+    color: #fff;
+}
+
+[data-theme="dark"] * {
+    color: #fff;
+}
+
+[data-theme="dark"] .darkModeCapable {
+    color: #fff;
+}
+
+[data-theme="dark"] .table-light {
+    color: #fff;
+  background-color: #333 !important;
+}

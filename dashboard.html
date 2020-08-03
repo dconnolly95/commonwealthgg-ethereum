@@ -30,6 +30,7 @@
         <!-- Bootstrap theme -->
         <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/hourglass.css" />
+        <link rel="stylesheet" href="assets/css/dark-mode.css">
         
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin" rel="stylesheet">
         
@@ -39,31 +40,39 @@
         <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
     </head>
 
-    <body class="wallpaper">
+    <body class="wallpaper darkModeCapable">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-icon-blue.png" width="30px" height="30px" /> commonwealth.gg</a>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/wlth-icon-blue.png" width="30px" height="30px" /> <span>commonwealth.gg</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="dashboard.html"><i class="fas fa-dollar-sign text-dark"></i>  Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="market.html"><i class="fas fa-coins text-dark"></i>  Market</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-dollar-sign"></i>  <span>Dashboard</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-coins"></i>  <span>Market</span></a></li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="chart.html"><i class="fas fa-chart-line text-dark"></i> Chart</a>
+                            <a class="nav-link" href="chart.html"><i class="fas fa-chart-line"></i> <span>Chart</span></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> Swap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> <span>Swap</span></a></li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="about.html"><i class="fas fa-info-circle text-dark"></i> About</a>
+                            <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
                         </li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> <span>Twitter</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item">
+                            <span class="nav-link">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                    <label class="custom-control-label" for="darkSwitch">Light/Dark</label>
+                                </div>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -83,24 +92,24 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-wallet text-dark"></i> My Wallet</div>
+                            <div class="card-header glassPanel rcTop"><i class="fas fa-wallet"></i> My Wallet</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h3><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="myCropTokens"></span></h3>
                                             <p>
-                                                <span id="myTokensValue" class="text-dark"></span> USD<br />
-                                                <small class="text-dark">My Balance</small>
+                                                <span id="myTokensValue" ></span> USD<br />
+                                                <small >My Balance</small>
                                             </p>
                                             
                                         </div>
                                         
                                         <div class="col text-center">
-                                            <h3 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myCropDividends"></span></h3>
+                                            <h3 ><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myCropDividends"></span></h3>
                                             <p>
                                                 <span id="myDividendsValue"></span> USD<br />
-                                                <small class="text-dark">My Dividends</small>
+                                                <small >My Dividends</small>
                                             </p>
                                         </div>
                                     </div>
@@ -124,15 +133,15 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card glassPanel border-success rcAll">
-                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-dollar-sign text-success"></i> Buy eWLTH</div>
+                            <div class="card-header glassPanel rcTop"><i class="fas fa-dollar-sign text-success"></i> Buy eWLTH</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark">
+                                            <h4 >
                                                 <img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> 1 = <span class="text-success"><span id="tokenUSDBuyPrice"></span> USD</span>
                                             </h4>
-                                            <small class="text-dark"><span id="tokenBuyGet">0.0000</span></small><br />
+                                            <small ><span id="tokenBuyGet">0.0000</span></small><br />
                                         </div>
                                     </div>
 
@@ -163,15 +172,15 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card glassPanel border-danger rcAll">
-                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-dollar-sign text-danger"></i> Sell eWLTH</div>
+                            <div class="card-header glassPanel rcTop"><i class="fas fa-dollar-sign text-danger"></i> Sell eWLTH</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark">
+                                            <h4 >
                                                 <img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> 1 = <span class="text-danger"><span id="tokenUSDSellPrice"></span> USD</span>
                                             </h4>
-                                            <small class="text-dark"><span id="tokenSellGet">0.0000</span></small><br />
+                                            <small ><span id="tokenSellGet">0.0000</span></small><br />
                                         </div>
                                     </div>
 
@@ -206,11 +215,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
+                            <div class="card-header glassPanel rcTop"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col text-center text-dark">
+                                        <div class="col text-center">
                                             <b>Invite your Friends!</b>
                                             <p>When others use your Referral Link to Buy eWLTH, you get a special bonus! Be sure to share it around on all your Social Media!</p>
                                         </div>
@@ -235,7 +244,7 @@
                     
                     <div class="col-md-6">
                             <div class="card glassPanel rcAll">
-                                <div class="card-header glassPanel rcTop text-dark"><i class="fas fa-arrow-right text-warning"></i> Transfer eWLTH</div>
+                                <div class="card-header glassPanel rcTop"><i class="fas fa-arrow-right text-warning"></i> Transfer eWLTH</div>
                                 <div class="card-body">
                                     <div class="container">
                                         <div class="row">
@@ -245,7 +254,7 @@
                                                 <br />
                                             </div>
                                             
-                                            <div class="col-md-8 text-left text-dark">
+                                            <div class="col-md-8 text-left">
                                                 <label>Recipient Address</label>
                                                 <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
                                                 <br />
@@ -261,7 +270,7 @@
                                             </div>
 
                                             <div class="col text-center">
-                                                <button id="qrCodeButton" class="btn btn-block -md btn-secondary rcAll" data-target="#qrcodeModal" data-toggle="modal">
+                                                <button id="qrCodeButton" class="btn btn-block btn-md btn-secondary rcAll" data-target="#qrcodeModal" data-toggle="modal">
                                                     <i class="fas fa-qrcode"></i> Show QR Code
                                                 </button>
                                             </div>
@@ -275,15 +284,15 @@
                 
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-dark"></i> View Market Data Chart</a><br />
+                        <a class="btn btn-lg btn-block btn-secondary rcAll" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar"></i> View Market Data Chart</a><br />
                     </div>
                     
                     <div class="col-md-4 text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum text-dark"></i> Get More ETH</a><br />
+                        <a class="btn btn-lg btn-block btn-secondary rcAll" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> Get More ETH</a><br />
                     </div>
                     
                     <div class="col-md-4 text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll text-dark" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank"><i class="fas fa-search-dollar text-dark"></i> View on EtherScan</a><br />
+                        <a class="btn btn-lg btn-block btn-secondary rcAll" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank"><i class="fas fa-search-dollar"></i> View on EtherScan</a><br />
                     </div>
                 </div>
                 <br />
@@ -291,12 +300,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-dark">Price Floor</div>
+                            <div class="card-header glassPanel rcTop">Price Floor</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark"><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="rainMakerTokens"></span> eWLTH</h4>
+                                            <h4><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="rainMakerTokens"></span> eWLTH</h4>
                                             <p>The Price Floor provides a guaranteed minimum value for eWLTH!<br />
                                                 <small><a href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn More</a></small>
                                             </p>
@@ -308,7 +317,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a id="rainMaker" class="btn btn-block -md btn-secondary text-dark rcAll">
+                                            <a id="rainMaker" class="btn btn-block -md btn-secondary rcAll">
                                                 Raise Floor (<span id="rainMakerDividends"></span> ETH)
                                             </a>
                                         </div>
@@ -321,12 +330,12 @@
                     
                     <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-dark">Your Portfolio</div>
+                            <div class="card-header glassPanel rcTop">Your Portfolio</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myETHValue">0</span> ETH</h4>
+                                            <h4 ><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myETHValue">0</span> ETH</h4>
                                             <p>Approx Value</p>
                                         </div>
                                     </div>
@@ -336,7 +345,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a id="blockscoutLink" class="btn btn-block -md btn-secondary text-dark rcAll" href="https://etherscan.io/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
+                                            <a id="blockscoutLink" class="btn btn-block -md btn-secondary rcAll" href="https://etherscan.io/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
                                         </div>
                                     </div>
                                 </div>
@@ -347,12 +356,12 @@
                     
                     <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-dark">Commonwealth.gg</div>
+                            <div class="card-header glassPanel rcTop">Commonwealth.gg</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-dark"><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="etcInContract">0</span></h4>
+                                            <h4 ><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="etcInContract">0</span></h4>
                                             <p>In the Contract</p>
                                         </div>
                                     </div>
@@ -362,7 +371,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a class="btn btn-block -md btn-secondary text-dark rcAll" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6#code" target="_blank">View Contract</a>
+                                            <a class="btn btn-block -md btn-secondary rcAll" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6#code" target="_blank">View Contract</a>
                                         </div>
                                     </div>
                                 </div>
@@ -378,9 +387,10 @@
             <div class="container">
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
-                        <small class="text-dark">
+                        <small >
                             This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
-                        </small>
+                        </small><br />
+                        <div id="google_translate_element"></div>
                     </div>
                 </div>
             </div>
@@ -396,7 +406,7 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title text-dark">Receive eWLTH</h4>
+                        <h4 class="modal-title">Receive eWLTH</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -406,9 +416,9 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <img id="qrImage" src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=Hello%20world&amp;choe=UTF-8" class="rcAll" alt="Your Crop Address as a QR Code"><br />
-                                    <p class="text-dark">
-                                        <b>Your Crop Address: </b>
-                                        <span id="myCropAddress" class="approx"></span><br />
+                                    <p >
+                                        <b>Your eWLTH (ETH) Address: </b>
+                                        <span id="myCropAddress" class="text-dark"></span><br />
                                     </p>
                                     <button id="copyAddressButton" class="btn btn-block -md btn-secondary rcAll copyAddressButton" data-clipboard-text="">
                                         <i class="copy icon"></i> Copy Address
@@ -434,18 +444,18 @@
                 <div class="modal-content">
 
                     <!-- Modal Header -->
-                    <div class="modal-header">
+                    <div class="modal-header bg-light">
                         <h4 class="modal-title">Get ETH with Changelly</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
                     <!-- Modal body -->
-                    <div class="modal-body">
+                    <div class="modal-body bg-light">
                         <script src="https://widget.changelly.com/affiliate.js"></script> <iframe src="https://widget.changelly.com?from=*&to=eth,etc&amount=1&address=0x5c79CaEFeAB641eB667Ee9dcb82c5e9D211eca73&fromDefault=btc&toDefault=eth&theme=default&merchant_id=9ep4xrdt9b5e9h9a&payment_id=&v=2" width="100%" height="600" class="changelly" scrolling="no" onLoad="function at(t){var e=t.target,i=e.parentNode,n=e.contentWindow,r=function(){return n.postMessage({width:i.offsetWidth},'https://widget.changelly.com')};window.addEventListener('resize',r),r()};at.apply(this, arguments);" style="min-width: 100%; width: 100px; overflow-y: hidden; border: none">Can't load widget</iframe>
                     </div>
 
                     <!-- Modal footer -->
-                    <div class="modal-footer">
+                    <div class="modal-footer bg-light">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
 
@@ -456,11 +466,11 @@
         <!-- Market Data Modal -->
         <div class="modal" id="marketdatachartModal">
             <div class="modal-dialog">
-                <div class="modal-content bg-light text-dark rcAll">
+                <div class="modal-content bg-light rcAll">
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title text-dark">Market Data Chart</h4>
+                        <h4 class="modal-title">Market Data Chart</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -480,7 +490,7 @@
                                         <input>
                                         <i class="dropdown icon"></i>
                                         <div>
-                                            <b>Price</b><span class="ui green text">&nbsp;| <span id="numDays">90 Days</span></span>
+                                            <b><span class="text-dark">Select Timespan</span></b>
                                         </div>
                                         <div class="menu">
                                             <div class="item" data-value="30">30 Days</div>
@@ -503,6 +513,8 @@
                 </div>
             </div>
         </div>
+        
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
         <!-- Bootstrap core JavaScript -->
         <script src="assets/js/jquery.min.js"></script>
@@ -520,6 +532,7 @@
         <script src="assets/js/web3.min.js"></script>
         <script src="assets/js/clipboard.min.js"></script>
         <script src="assets/js/lodash.min.js"></script>
+        <script src="assets/js/dark-mode-switch.min.js"></script>
         
         <script src="assets/lib/metamask-adapter.js"></script>
         
@@ -532,5 +545,11 @@
         <script src="assets/lib/use.js"></script>
         <script src="assets/lib/charts.js"></script>
         <script src="assets/lib/prices.js"></script>
+    
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script>
     </body>
 </html>

@@ -28,7 +28,7 @@ function activateUI(cropAddress) {
     
     $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
     
-    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-md btn-secondary text-dark rcAll" href="https://etherscan.io/address/'+ myCropAddress +'">Explore</a>');
+    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-md btn-secondary rcAll" href="https://etherscan.io/address/'+ myCropAddress +'">Explore</a>');
     
     $('#connectionStatusIndicator').replaceWith('<div class="col text-white text-center"><h4><img src="assets/img/eth-logo-transparent.png" width="13px" height="20px" /> Connected to <b>Ethereum (ETH)</b></h4><br /></div>');
     

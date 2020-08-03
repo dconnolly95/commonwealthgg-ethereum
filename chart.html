@@ -30,6 +30,7 @@
         <!-- Bootstrap theme -->
         <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/hourglass.css" />
+        <link rel="stylesheet" href="assets/css/dark-mode.css">
         
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin" rel="stylesheet">
         
@@ -42,28 +43,36 @@
     <body class="wallpaper">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand text-dark" href="index.html"><img src="assets/img/wlth-icon-blue.png" width="30px" height="30px" /> commonwealth.gg</a>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/wlth-icon-blue.png" width="30px" height="30px" /> <span>commonwealth.gg</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="dashboard.html"><i class="fas fa-dollar-sign text-dark"></i>  Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="market.html"><i class="fas fa-coins text-dark"></i>  Market</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-dollar-sign"></i>  <span>Dashboard</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-coins"></i>  <span>Market</span></a></li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="chart.html"><i class="fas fa-chart-line text-dark"></i> Chart</a>
+                            <a class="nav-link" href="chart.html"><i class="fas fa-chart-line"></i> <span>Chart</span></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> Swap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> <span>Swap</span></a></li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="about.html"><i class="fas fa-info-circle text-dark"></i> About</a>
+                            <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
                         </li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github text-dark"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> <span>Twitter</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github"></i> <span>GitHub</span></a></li>
+                        <li class="nav-item">
+                            <span class="nav-link">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                    <label class="custom-control-label" for="darkSwitch">Light/Dark</label>
+                                </div>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -96,26 +105,26 @@
                     <div class="col-md-3 text-center">
                         <label class="text-white">History to View</label>
                         <div id="timeFrame" class="ui selection dropdown">
-                                <input>
-                                <i class="dropdown icon"></i>
-                                <div>
-                                    <b>Price</b><span class="ui green text">&nbsp;| <span id="numDays">90 Days</span></span>
-                                </div>
-                                <div class="menu">
-                                    <div class="item" data-value="30">30 Days</div>
-                                    <div class="item" data-value="90">90 Days</div>
-                                    <div class="item" data-value="180">6 Months</div>
-                                    <div class="item" data-value="365">1 Year</div>
-                                    <div class="item" data-value="100000">Max</div>
-                                </div>
+                            <input>
+                            <i class="dropdown icon"></i>
+                            <div>
+                                <b><span class="text-dark">Select Timespan</span></b>
                             </div>
+                            <div class="menu">
+                                <div class="item" data-value="30">30 Days</div>
+                                <div class="item" data-value="90">90 Days</div>
+                                <div class="item" data-value="180">6 Months</div>
+                                <div class="item" data-value="365">1 Year</div>
+                                <div class="item" data-value="100000">Max</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br />
                 
                 <div class="container">
                     <div class="row">
-                        <div class="col text-center glassPanel text-dark rcAll">
+                        <div class="col text-center glassPanel rcAll">
                             <svg id="container"></svg><br />
                             <a href="https://www.xenobank.com/" class="text-success text-center" target="_blank" style="font-size:10px;">(More  Data at Xenobank.com)</a>
                         </div>
@@ -129,9 +138,10 @@
             <div class="container">
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
-                        <small class="text-dark">
+                        <small>
                             This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
-                        </small>
+                        </small><br />
+                        <div id="google_translate_element"></div>
                     </div>
                 </div>
             </div>
@@ -148,18 +158,18 @@
                 <div class="modal-content">
 
                     <!-- Modal Header -->
-                    <div class="modal-header">
+                    <div class="modal-header bg-light">
                         <h4 class="modal-title">Get ETH with Changelly</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
                     <!-- Modal body -->
-                    <div class="modal-body">
+                    <div class="modal-body bg-light">
                         <script src="https://widget.changelly.com/affiliate.js"></script> <iframe src="https://widget.changelly.com?from=*&to=eth,etc&amount=1&address=0x5c79CaEFeAB641eB667Ee9dcb82c5e9D211eca73&fromDefault=btc&toDefault=eth&theme=default&merchant_id=9ep4xrdt9b5e9h9a&payment_id=&v=2" width="100%" height="600" class="changelly" scrolling="no" onLoad="function at(t){var e=t.target,i=e.parentNode,n=e.contentWindow,r=function(){return n.postMessage({width:i.offsetWidth},'https://widget.changelly.com')};window.addEventListener('resize',r),r()};at.apply(this, arguments);" style="min-width: 100%; width: 100px; overflow-y: hidden; border: none">Can't load widget</iframe>
                     </div>
 
                     <!-- Modal footer -->
-                    <div class="modal-footer">
+                    <div class="modal-footer bg-light">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
 
@@ -167,6 +177,8 @@
             </div>
         </div>
     </body>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     <!-- Bootstrap core JavaScript -->
     <script src="assets/js/jquery.min.js"></script>
@@ -184,6 +196,7 @@
     <script src="assets/js/web3.min.js"></script>
     <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/lodash.min.js"></script>
+    <script src="assets/js/dark-mode-switch.min.js"></script>
     
     <script src="assets/lib/metamask-adapter.js"></script>
     <script src="assets/lib/contracts.js"></script>
@@ -191,4 +204,10 @@
     <script src="assets/lib/util.js"></script>
     <script src="assets/lib/charts.js"></script>
     <script>drawChart(180,true);</script>
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
 </html>
