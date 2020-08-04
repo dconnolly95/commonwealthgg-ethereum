@@ -13,7 +13,7 @@
         <meta property="og:description" content="The World's Saving Fund on Ethereum" />
         <meta property="og:image" content="https://commonwealth.gg/img/coin.png" />
         
-        <title>Market | commonwealth.gg</title>
+        <title>Market Info | commonwealth.gg</title>
         
         <meta charset="utf8">
         <meta name="description" content="The World's Saving Fund on Ethereum">
@@ -43,18 +43,15 @@
     <body class="wallpaper">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/wlth-icon-blue.png" width="30px" height="30px" /> <span>commonwealth.gg</span></a>
+                <a class="navbar-brand" href="index.html"><h4><img src="assets/img/wlth-gradient-coin.png" width="30px" height="30px" /> <span>eWLTH</span></h4></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-dollar-sign"></i>  <span>Dashboard</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-coins"></i>  <span>Market</span></a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="chart.html"><i class="fas fa-chart-line"></i> <span>Chart</span></a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-coins"></i>  <span>Dashboard</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-chart-line"></i> <span>Market</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> <span>Swap</span></a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
@@ -85,80 +82,96 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <img src="assets/img/wlth-icon-white.png" width="150px" height="150px" />
-                        <h1 class="text-white">commonwealth.gg</h1>
+                        <img src="assets/img/wlth-gradient-coin.png" width="150px" height="150px" />
+                        <h1 class="text-white notranslate">eth.commonwealth.gg</h1>
                         <p class="text-white">The World&apos;s Saving Fund on Ethereum</p>
                     </div>
                 </div>
                 <br />
                 
                 <div class="row">
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>WLTH Price:</strong> <span id="WLTHpriceETC">0</span> / <span id="WLTHpriceUSD">0</span> USD
+                        <div class="col-md-6 text-center">
+                            <h3>Market History Chart</h3>
+                            <div class="glassPanel rcAll">
+                                <svg id="container"></svg><br />
+                                <a href="https://www.xenobank.com/" class="text-success text-center" target="_blank" style="font-size:10px;">(More  Data at Xenobank.com)</a>
+                            </div>
+                            <br />
+                            
+                            <label>History to View</label>
+                            <div id="timeFrame" class="ui selection dropdown bg-light">
+                                <input>
+                                <i class="dropdown icon"></i>
+                                <div>
+                                    <b><span>Select Timespan</span></b>
+                                </div>
+                                <div class="menu bg-light">
+                                    <div class="item" data-value="30"><span>30 Days</span></div>
+                                    <div class="item" data-value="90"><span>90 Days</span></div>
+                                    <div class="item" data-value="180"><span>6 Months</span></div>
+                                    <div class="item" data-value="365"><span>1 Year</span></div>
+                                    <div class="item" data-value="100000"><span>Max</span></div>
+                                </div>
+                            </div>
+                            <br />
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>eWLTH Price:</strong> <span id="EWLTHpriceETH">0</span> / <span id="EWLTHpriceUSD">0</span> USD
-                        </div>
-                    </div>
-                </div>
+                        
+                        <div class="col-md-6">
+                            <br />
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="alert alert-light text-center rcAll">
+                                            <strong>eWLTH Price:</strong> <span id="EWLTHpriceETH">0</span> / <span id="EWLTHpriceUSD">0</span> USD
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="alert alert-light text-center rcAll">
+                                            <strong>ETH Vault: </strong> <span id="EWLTHsizeETH">0</span> / <span id="EWLTHsizeUSD">0</span> USD
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="alert alert-light text-center rcAll">
+                                            <strong>Dividends Paid: </strong><span id="totalEWLTHDividends">0</span> (<span id="dividendsUSD"></span> USD)
+                                        </div>
+                                    </div>
+                                </div>
                 
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>ETC Vault: </strong> <span id="WLTHsizeETC">0</span> / <span id="WLTHsizeUSD">0</span> USD
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>ETH Vault: </strong> <span id="EWLTHsizeETH">0</span> / <span id="EWLTHsizeUSD">0</span> USD
-                        </div>
-                    </div>
-                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="alert alert-light text-center rcAll">
+                                            <strong>Circulation: </strong><span id="totalWLTHSupply">0</span> WLTH / <span id="totalEWLTHSupply">0</span> eWLTH
+                                        </div>
+                                    </div>
+                                </div>
                 
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>Dividends Paid: </strong><span id="totalWLTHDividends">0</span> / <span id="totalEWLTHDividends">0</span>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="alert alert-light text-center rcAll">
+                                            <strong><span id="cheapestAssetRightNow"></span></strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="alert alert-light text-center rcAll">
+                                            1 ETH = <strong>$<span id="ethPriceUSD">0</span> USD</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>Circulation: </strong><span id="totalWLTHSupply">0</span> WLTH / <span id="totalEWLTHSupply">0</span> eWLTH
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong><span id="cheapestAssetRightNow"></span></strong>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>ETC Price (USD):</strong> $<span id="etcPriceUSD">0</span> USD
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-light text-center rcAll">
-                            <strong>ETH Price (USD):</strong> $<span id="ethPriceUSD">0</span> USD
-                        </div>
-                    </div>
                 </div>
                 <br />
-                
+
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <a class="btn btn-block btn-md btn-success rcAll" href="https://commonwealth.gg/use.html"><i class="fas fa-arrow-right"></i> Commonwealth.gg WLTH (ETC)</a><br />
@@ -173,7 +186,8 @@
                     </div>
                 </div>
                 <br />
-            </div>
+                </div>
+                
         </main>
         
         <footer>
@@ -188,9 +202,6 @@
                 </div>
             </div>
         </footer>
-        
-        <br />
-        <br />
         <br />
         <br />
         <br />
@@ -225,22 +236,33 @@
     
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
+    <!-- Bootstrap core JavaScript -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    
-    <script src="assets/js/web3.min.js"></script>
-    <script src="assets/js/ethereumjs.min.js"></script>
+        
+    <script src="assets/js/jquery.lazyload.min.js"></script>
+    <script src="assets/js/jquery.validation.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
+    <script src="assets/js/d3.v5.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/semantic.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script src="assets/js/lodash.min.js"></script>
     <script src="assets/js/dark-mode-switch.min.js"></script>
     
     <script src="assets/lib/metamask-adapter.js"></script>
     <script src="assets/lib/contracts.js"></script>
+    
     <script src="assets/lib/util.js"></script>
+    <script src="assets/lib/charts.js"></script>
     <script src="assets/lib/compare.js"></script>
     <script>getCommonwealthData();</script>
     <script>getCheapestInvestmentOption();</script>
+    <script>drawChart(180,true);</script>
     
     <script type="text/javascript">
         function googleTranslateElementInit() {

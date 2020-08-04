@@ -46,7 +46,7 @@ function financialPlanner(prices, inputDollar){
     newDividends = (last.TotalDividends - first.TotalDividends)
 
     /***
-     * This section is for anything on the /chart.html page that requires prices OHLC AND the global stats. Two seperate calls.
+     * This section is for anything on the /market.html page that requires prices OHLC AND the global stats. Two seperate calls.
      */
     setTimeout(function(){ 
         myShare = (TokensPurchased / globalStats.P3CSupply)
