@@ -53,15 +53,23 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-coins"></i>  <span>Dashboard</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-chart-line"></i> <span>Market</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#changellyModal"><i class="fab fa-ethereum"></i> <span>Swap</span></a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
                         </li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/commonwealth_gg" target="_blank"><i class="fab fa-twitter text-info"></i> <span>Twitter</span></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span><i class="fas fa-share-square"></i> Social Media</span>
+                            </a>
+                            <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://twitter.com/eWLTH_GG" target="_blank"><i class="fab fa-twitter text-info"></i>  Twitter</a>
+                                <a class="dropdown-item" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>Showcase</span></a>
+                            </div>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github"></i> <span>GitHub</span></a></li>
                         <li class="nav-item">
                             <span class="nav-link">
@@ -411,31 +419,6 @@
         <br />
         
         <!-- Modals -->
-        <!-- Changelly Modal -->
-        <div class="modal" id="changellyModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header bg-light">
-                        <h4 class="modal-title">Get ETH with Changelly</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body bg-light">
-                        <script src="https://widget.changelly.com/affiliate.js"></script> <iframe src="https://widget.changelly.com?from=*&to=eth,etc&amount=1&address=0x5c79CaEFeAB641eB667Ee9dcb82c5e9D211eca73&fromDefault=btc&toDefault=eth&theme=default&merchant_id=9ep4xrdt9b5e9h9a&payment_id=&v=2" width="100%" height="600" class="changelly" scrolling="no" onLoad="function at(t){var e=t.target,i=e.parentNode,n=e.contentWindow,r=function(){return n.postMessage({width:i.offsetWidth},'https://widget.changelly.com')};window.addEventListener('resize',r),r()};at.apply(this, arguments);" style="min-width: 100%; width: 100px; overflow-y: hidden; border: none">Can't load widget</iframe>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        
         <!-- Mobile User Modal -->
         <div class="modal" id="mobileUserModal">
             <div class="modal-dialog">
