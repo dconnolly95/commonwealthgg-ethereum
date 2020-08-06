@@ -64,7 +64,7 @@ function updateEtcPrice(portfolio) {
       setBuyPrice(usdPrice)
       setSellPrice(usdPrice)
       setMarketCap(usdPrice)
-
+    
       setTokensPrice(usdPrice)
       setDividendsPrice(usdPrice)
       if (portfolio === true){

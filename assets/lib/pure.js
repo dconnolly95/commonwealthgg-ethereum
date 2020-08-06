@@ -14,6 +14,7 @@ function getMyCrop() {
     setTimeout(function () {if (web3.eth.accounts[0] === undefined) {alertify.error('Not connected to Commonwealth.')} else {alertify.success('Connected to Commonwealth.')}}, 1000)
     myCropAddress = web3.toChecksumAddress(web3.eth.accounts[0])
     activateUI(myCropAddress)
+    getMySupplyPercentage()
 }
 
 function activateUI(cropAddress) {
@@ -73,15 +74,28 @@ function getMyCropTokens() {
             myCropTokens = result;
             if (change) {
                 $("#myCropTokens").replaceWith("<b id='myCropTokens'>" + numberWithCommas((web3.fromWei(myCropTokens)).toFixed(2)) + "</b>")
+                
                 p3cContract.sellPrice(function (e, r) {
                     let sellPrice = web3.fromWei(r)
                     myETHValue = (sellPrice * web3.fromWei(myCropTokens))
                     $('#myETHValue').text(numberWithCommas(myETHValue.toFixed(1)))
                 })
+                
                 $('#myCropTokens').transition({animation: 'flash', duration: '1s',});
             }
         }
     });
+}
+
+var myPercentage = 0
+function getMySupplyPercentage() {
+    p3cContract.totalSupply.call(function (err, result) {
+        if (!err) {
+            let myPercentage = (myCropTokens / result) * 100
+            let actualPercentage = (Math.round(Number(myPercentage) * 100) / 100).toFixed(2);
+            $('#myPercentage').text(Number(actualPercentage))
+        }
+    })
 }
 
 getMyCrop()
