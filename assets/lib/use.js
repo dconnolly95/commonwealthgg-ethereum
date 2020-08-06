@@ -8,11 +8,9 @@ if (typeof web3 == 'undefined') {
                 Hello, and thank you for visiting Commonwealth.gg eWLTH! Before you can continue, you need to login to your wallet and ensure it is unlocked - that way, you can manage your eWLTH and Dividends. If you have any troubles, please join our <a href="#">Discord Server</a> and ask for assistance in the <b>Help Channel</b>.
             </p>
         `,
-        //if ok deploy the crop
         function () {
             
         },
-        // if cancel disable everything
         function () {
             alertify.defaults.notifier.delay = 10000
             alertify.error('<h3>View Mode.</h3>')
@@ -43,13 +41,8 @@ $("#sell").click(function () {
     sellFromCrop(amountToSell)
 })
 
-$("#withdraw").click(function () {
-    withdrawFromCrop()
-})
-
-$("#reinvest").click(function () {
-    reinvestFromCrop()
-})
+$("#withdraw").click(function () {withdrawFromCrop()})
+$("#reinvest").click(function () {reinvestFromCrop()})
 
 $("#transfer").click(function () {
     destination = $("#transferAddress").val()
@@ -86,18 +79,8 @@ $('#sellInput').on('input change', function () {
 
 $('#buyAmount').hide();
 $('#sellAmount').hide();
-
-$('#buyInput').on('keyup change', function () {
-    if (this.value.length > 0) {
-        $('#buyAmount').show();
-    }
-});
-
-$('#sellInput').on('keyup change', function () {
-    if (this.value.length > 0) {
-        $('#sellAmount').show();
-    }
-});
+$('#buyInput').on('keyup change', function () {if (this.value.length > 0) {$('#buyAmount').show();}});
+$('#sellInput').on('keyup change', function () {if (this.value.length > 0) {$('#sellAmount').show();}});
 
 var amount;
 function setMarketCap(){
@@ -134,19 +117,13 @@ function copyAddress() {
 }
 
 new ClipboardJS('.copybutton');
-$('.copybutton').on('click', function (){
-  alertify.success('Copied', 2)
-})
+$('.copybutton').on('click', function (){alertify.success('Copied', 2)});
 
 new ClipboardJS('.copyAddressButton');
-$('.copyAddressButton').on('click', function() {
-    alertify.success('Copied Address', 2)
-});
+$('.copyAddressButton').on('click', function() {alertify.success('Copied Address', 2)});
 
 new ClipboardJS('.copyLinkButton');
-$('.copyLinkButton').on('click', function() {
-    alertify.success('Copied Link', 2)
-});
+$('.copyLinkButton').on('click', function() {alertify.success('Copied Link', 2)});
 
 function setPortfolio(cropAddress) {
     $.getJSON("https://api.commonwealth.gg/price/crop/" + web3.toChecksumAddress(cropAddress), function (data) {
@@ -154,14 +131,10 @@ function setPortfolio(cropAddress) {
             // (New Number - Original Number) ÷ Original Number × 100.
             $('#portfolioButton').show();
             performance = `
-            My account performance (in USD):
-            <br>
-            <b>Change 1 Day</b>: {usd1}
-            <br>
-            <b>Change 7 Days</b>: {usd7}
-            <br>
-            <b>Change 30 Days</b>: {usd30}
-            <br>
+            My account performance (in USD):<br />
+            <b>Change 1 Day</b>: {usd1}<br />
+            <b>Change 7 Days</b>: {usd7}<br />
+            <b>Change 30 Days</b>: {usd30}<br />
             <span class="ui text small eleven converted">Past growth is no guarantee of future results.</span>
             `
             $.each(data, function (key, val) {
@@ -172,11 +145,6 @@ function setPortfolio(cropAddress) {
                     change = String(change).replace('0.', '.')
                 }
                 color = (change >= 0) ? "green" : "red"
-                // TODO does this make sense?
-                // if (key == "usd1"){
-                //     $("#myDayChange").html("<span class='text small eleven'>  " + change + "%</span>")
-                //     $("#myDayChange").css("color", color)
-                // }
                 performance = performance.replace('{' + key + '}', '<span class="' + color + '">' + change + '%</span>')
                 if (color == "red" && key == 'usd7' && Math.abs(Number(change)) != 100){
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BalanceDown','value': Number(change)});};
