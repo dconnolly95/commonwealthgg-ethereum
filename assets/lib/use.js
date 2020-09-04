@@ -41,6 +41,13 @@ $("#sell").click(function () {
     sellFromCrop(amountToSell)
 })
 
+$("#setReferral").click(function () {
+    var referralAddr = $("#referralAddress").val();
+    localStorage.setItem("ref", referralAddr);
+    console.log(localStorage.getItem("ref"));
+    alertify.success('Set new Masternode');
+})
+
 $("#withdraw").click(function () {withdrawFromCrop()})
 $("#reinvest").click(function () {reinvestFromCrop()})
 

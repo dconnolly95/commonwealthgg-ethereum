@@ -6,29 +6,40 @@ html, body {
     overflow-x: hidden;
 }
 
+
+
+.wallpaper {
+    background: rgb(86,180,211);
+    background: linear-gradient(-45deg, rgba(86,180,211,1) 0%, rgba(52,143,80,1) 100%);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
 .wlthFont {
     font-family: 'Lato', cursive;
 }
 
-.wallpaper {
-    background: rgb(86,180,211);
-    background: linear-gradient(90deg, rgba(86,180,211,1) 0%, rgba(52,143,80,1) 100%);
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
 }
 
 /* Rounded Corner FX */
 /* 0,0,0,0 - top left, top right, bottom right, bottom left */
-.rcTopLeft      {border-radius: 10px  0px  0px  0px;}
-.rcTopRight     {border-radius:  0px 10px  0px  0px;}
-.rcBottomLeft   {border-radius:  0px  0px  0px 10px;}
-.rcBottomRight  {border-radius: 10px  0px 10px  0px;}
+.rcTopLeft      {border-radius: 5px  0px  0px  0px;}
+.rcTopRight     {border-radius:  0px 5px  0px  0px;}
+.rcBottomLeft   {border-radius:  0px  0px  0px 5px;}
+.rcBottomRight  {border-radius: 5px  0px 10px  0px;}
 
-.rcTop          {border-radius: 10px 10px  0px  0px;}
-.rcBottom       {border-radius:  0px  0px 10px 10px;}
+.rcTop          {border-radius: 5px 5px  0px  0px;}
+.rcBottom       {border-radius:  0px  0px 5px 5px;}
 
-.rcLeft         {border-radius: 10px  0px  0px 10px;}
-.rcRight        {border-radius:  0px 10px 10px  0px;}
+.rcLeft         {border-radius: 5px  0px  0px 5px;}
+.rcRight        {border-radius:  0px 5px 5px  0px;}
 
-.rcAll          {border-radius: 10px 10px 10px 10px;}
+.rcAll          {border-radius: 5px 5px 5px 5px;}
 .rcNone         {border-radius:  0px  0px  0px  0px;}
 
 .clearPanel {
@@ -47,4 +58,28 @@ html, body {
 .glassButton:hover {
     background-color: rgba(95, 95, 95, 0.65);
     color: #000;
+}
+
+.greenBorder {
+    border: 1px SOLID #14ff00;
+}
+
+.redBorder {
+    border: 1px SOLID #ff0000;
+}
+
+.whiteBorder {
+    border: 1px SOLID #fff;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

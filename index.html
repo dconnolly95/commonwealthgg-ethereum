@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
         
         <!-- Bootstrap theme -->
-        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap-default.min.css" />
         <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css" />
         <link rel="stylesheet" href="assets/css/hourglass.css" />
         <link rel="stylesheet" href="assets/css/dark-mode.css">
@@ -46,16 +46,14 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="index.html"><h4><img src="assets/img/wlth-gradient-coin.png" width="30px" height="30px" /> <span>eWLTH</span></h4></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span><i class="fas fa-chevron-circle-down"></i></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-coins"></i>  <span>Dashboard</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-chart-line"></i> <span>Market</span></a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
@@ -66,55 +64,45 @@
                             <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="https://twitter.com/eWLTH_GG" target="_blank"><i class="fab fa-twitter text-info"></i>  Twitter</a>
                                 <a class="dropdown-item" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a>
-                                <a class="dropdown-item" href="https://t.me/eWLTH" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a>
+                                <a class="dropdown-item" href="https://t.me/eWLTH" target="_blank"><i class="fab fa-telegram text-info"></i> <span>Telegram</span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>Showcase</span></a>
+                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>YouTube</span></a>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github"></i> <span>GitHub</span></a></li>
-                        <li class="nav-item">
-                            <span class="nav-link">
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
-                                    <label class="custom-control-label" for="darkSwitch">Light/Dark</label>
-                                </div>
-                            </span>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" data-target="#settingsModal" data-toggle="modal"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         
         <main role="main">
-            <div class="container">
+            <div class="jumbotron glassPanel rcBottom" style="margin-top: 55px;">
                 <div class="row">
                     <div class="col text-center">
-                        <div class="jumbotron clearPanel rcAll text-white">
+                        <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <img src="assets/img/wlth-icon-white.png" width="150px" height="150px" />
-                                    <h1 class="text-white">commonwealth.gg</h1>
-                                    <p class="text-white">The World&apos;s Saving Fund on Ethereum</p><br />
-                                </div>
-                            </div>   
-                            <div class="row">
-                                <div class="col-md-4 text-center">
-                                    <a class="btn btn-light btn-md btn-block rcAll" href="dashboard.html"><i class="fas fa-wallet"></i> Web Wallet</a><br />
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <a class="btn btn-light btn-md btn-block rcAll" href="market.html"><i class="fas fa-chart-bar"></i> Market Info</a><br />
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <a class="btn btn-light btn-md btn-block rcAll" href="about.html"><i class="fas fa-info-circle"></i> About</a><br />
+                                    <img src="assets/img/wlth-gradient-coin.png" width="150px" height="150px" />
+                                    <h1>eWLTH</h1>
+                                    <p>The World Savings Vault on Ethereum</p><br />
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <a class="btn btn-light btn-lg btn-block rcAll" href="dashboard.html"><i class="fas fa-wallet"></i> Web Wallet</a><br />
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a class="btn btn-light btn-lg btn-block rcAll" href="market.html"><i class="fas fa-chart-bar"></i> Market Info</a><br />
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a class="btn btn-light btn-lg btn-block rcAll" href="about.html"><i class="fas fa-info-circle"></i> About</a><br />
                     </div>
                 </div>
                 
@@ -195,7 +183,7 @@
                 
                 <div class="row">
                     <div class="col text-center">
-                        <h3><i>How does Commonwealth diversify my savings?</i></h3>
+                        <h3><i>How does eWLTH diversify my savings?</i></h3>
                         <table id="comparisonTable" class="table table-hover">
                             <thead>
                                 <tr class="bg-light">
@@ -272,11 +260,12 @@
                 <hr />
                 
                 <div class="row">
-                    <div class="col text-center">
-                        <h3 class="text-white"><i>How do I use Commonwealth?</i></h3>
+                    <div class="col-md-6 text-center">
+                        <h3 class="text-white"><i>How do I use eWLTH?</i></h3>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
+                                    <br />
                                     <img src="assets/img/phone.png" width="200px" height="200px" />
                                     <h4 class="text-white">I use a Mobile Phone</h4>
                                     <a class="btn btn-md btn-light rcAll" data-toggle="modal" data-target="#mobileUserModal">Learn More</a>
@@ -284,6 +273,7 @@
                                 </div>
                                 
                                 <div class="col-md-6">
+                                    <br />
                                     <img src="assets/img/computer.png" width="200px" height="200px" />
                                     <h4 class="text-white">I use a Computer</h4>
                                     <a class="btn btn-md btn-light rcAll" data-toggle="modal" data-target="#computerUserModal">Learn More</a>
@@ -292,136 +282,106 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <hr />
-                
-                <div class="row">
-                    <div class="col text-center">
+
+                    <div class="col-md-6 text-center">
                         <h3 class="text-white">More Information</h3>
-                    </div>
-                </div>
-                <br />
-                
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header"><h4>Why save with Commonwealth?</h4></div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-left">
-                                            <ul>
-                                                <li><b>Transparent: </b> Control and audit your savings at all times. Middlemen can&apos;t tamper with funds, or prevent access.<br /><br /></li>
-                                                <li><b>Open: </b> Fairly leverages micro-dividends generated from deposits and withdrawals of ETH. All money stays between users!<br /><br /></li>
-                                                <li><b>Liquid: </b> Deposit or withdraw easily any time. The smart contract works with any amount.<br /></li>
-                                            </ul>
-                                        </div>
+                        
+                        <div class="accordion" id="accordionExample">
+                            <div class="card glassPanel">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Why save with eWLTH?
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><b>Transparent: </b> Control and audit your savings at all times. Middlemen can&apos;t tamper with funds, or prevent access.<br /><br /></li>
+                                            <li><b>Open: </b> Fairly leverages micro-dividends generated from deposits and withdrawals of ETH. All money stays between users!<br /><br /></li>
+                                            <li><b>Liquid: </b> Deposit or withdraw easily any time. The smart contract works with any amount.<br /></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-6 text-center">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header"><h4 >How are Dividends Paid?</h4></div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-left">
-                                            <ul>
-                                                <li>A 10&#37; dividend is paid out proportionally, <b>in ETH</b>, to all eWLTH holders whenever someone buys or sells.<br /><br /></li>
-                                                <li>The more eWLTH are bought or sold, the more dividends are generated.<br /><br /></li>
-                                                <li>Every eWLTH bought automatically increases the price of the next, each one sold decreases the price.</li>
-                                            </ul>
-                                        </div>
+                            
+                            <div class="card glassPanel">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            How are Dividends paid?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>A 10&#37; dividend is paid out proportionally, <b>in ETH</b>, to all eWLTH holders whenever someone buys or sells.<br /><br /></li>
+                                            <li>The more eWLTH are bought or sold, the more dividends are generated.<br /><br /></li>
+                                            <li>Every eWLTH bought automatically increases the price of the next, each one sold decreases the price.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br />
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header"><h4 >What about Ethereum Classic?</h4></div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
+                            
+                            <div class="card glassPanel">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Learn more about Commonwealth.gg
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row">
                                         <div class="col text-center">
-                                            <p>Commonwealth.gg started as a fork of P3D, deployed on Ethereum Classic. Since then, the project and platform has been growing exponentially in investors, development and volume.<br />
-                                            <br />
-                                            Commonwealth&apos;s new eWLTH branch is just one step further to becoming the dominant currency and global savings vault, the way Commonwealth is intended.</p>
+                                            <p>
+                                                Commonwealth.gg started as a fork of P3D, deployed on Ethereum Classic. Since then, the project and platform has been growing exponentially in investors, development and volume.<br />
+                                                <br />
+                                                Commonwealth&apos;s new eWLTH branch is just one step further to becoming the dominant currency and global savings vault, the way Commonwealth is intended.<br />
+                                                Commonwealth.gg prides itself on being an open-source, promotive project, regardless of the chain it is deployed on. Participants are encouraged to join the Commonwealth Discord Server, and share their experiences with others!<br />
+                                                <br />
+                                                The Discord Server is the best place to find help if ever you need it - whatever timezone or part of the world you are in, there&apos;s a good chance someone else in a similar zone will be online near you - help is never too far away!
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="container">
+                                    
                                     <div class="row">
                                         <div class="col text-center">
                                             <a class="btn btn-block btn-md btn-light rcAll" href="https://commonwealth.gg">Visit the original Commonwealth.gg</a>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-6 text-center">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header"><h4 >Want to learn more?</h4></div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <p>Commonwealth.gg prides itself on being an open-source, promotive project, regardless of the chain it is deployed on. Participants are encouraged to join the Commonwealth Discord Server, and share their experiences with others!<br />
-                                            <br />
-                                            The Discord Server is the best place to find help if ever you need it - whatever timezone or part of the world you are in, there&apos;s a good chance someone else in a similar zone will be online near you - help is never too far away!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
+                                        
                                         <div class="col text-center">
                                             <a class="btn btn-block btn-md btn-light rcAll" href="https://discord.gg/xh3nkp4" target="_blank">Join the Discord Server</a>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </main>
+        
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <br />
+                        <small>
+                            This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
+                        </small><br />
+                        <div id="google_translate_element"></div>
                         <br />
                     </div>
                 </div>
             </div>
-        </main>
-        
-        <footer>
-            <div class="container">
-                <div class="row jumbotron glassPanel rcAll">
-                    <div class="col text-center">
-                        <small >
-                            This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
-                        </small><br />
-                        <div id="google_translate_element"></div>
-                    </div>
-                </div>
-            </div>
         </footer>
-        
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         
         <!-- Modals -->
         <!-- Mobile User Modal -->
@@ -493,6 +453,53 @@
                 </div>
             </div>
         </div>
+        
+        <div class="modal" id="settingsModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">eWLTH Settings</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Set Referrer</h3>
+                                    <label>Enter your referrer&apos;s ETH Address: </label><br />
+                                    <input id="referralAddress" type="text" class="form-control-sm btn-block rcAll" placeholder="0x..." /><br />
+                                    <button id="setReferral" class="btn btn-block btn-md btn-success rcAll" href="#">Set Referrer</button>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Theme Settings</h3>
+                                    <p>Toggle the switch below to enable or disable Dark Mode!</p>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                        <label class="custom-control-label" for="darkSwitch">Use Dark Mode</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
     </body>
     
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 

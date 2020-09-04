@@ -21,9 +21,7 @@ function getRainMakerInfo() {
 $("#rainMaker").click(function () {
     rainMaker.makeItRain.sendTransaction(
         {
-            from: web3.eth.accounts[0],
-            gasPrice: web3.toWei(1, 'gwei'),
-            gas: 217570
+            from: web3.eth.accounts[0]
         },
         function (error, result) {
             if (!error) {
@@ -37,9 +35,7 @@ $("#rainMaker").click(function () {
 
 $("#distribute").click(function () {
     divies.distribute.sendTransaction({
-        from: web3.eth.accounts[0],
-        gasPrice: web3.toWei(1, 'gwei'),
-        gas: 1320455
+        from: web3.eth.accounts[0]
     }, function (error, result) {
         if (!error) {
             alertify.success("Distributing Divies.")

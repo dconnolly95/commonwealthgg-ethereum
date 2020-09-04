@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
         
         <!-- Bootstrap theme -->
-        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap-default.min.css" />
         <link rel="stylesheet" href="assets/css/hourglass.css" />
         <link rel="stylesheet" href="assets/css/dark-mode.css">
         
@@ -45,16 +45,14 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="index.html"><h4><img src="assets/img/wlth-gradient-coin.png" width="30px" height="30px" /> <span>eWLTH</span></h4></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span><i class="fas fa-chevron-circle-down"></i></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-coins"></i>  <span>Dashboard</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-chart-line"></i> <span>Market</span></a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
@@ -65,73 +63,49 @@
                             <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="https://twitter.com/eWLTH_GG" target="_blank"><i class="fab fa-twitter text-info"></i>  Twitter</a>
                                 <a class="dropdown-item" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a>
-                                <a class="dropdown-item" href="https://t.me/eWLTH" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a>
+                                <a class="dropdown-item" href="https://t.me/eWLTH" target="_blank"><i class="fab fa-telegram text-info"></i> <span>Telegram</span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>Showcase</span></a>
+                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>YouTube</span></a>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github"></i> <span>GitHub</span></a></li>
-                        <li class="nav-item">
-                            <span class="nav-link">
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
-                                    <label class="custom-control-label" for="darkSwitch">Light/Dark</label>
-                                </div>
-                            </span>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" data-target="#settingsModal" data-toggle="modal"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         
-        <br /><br /><br />
-        <br /><br /><br />
-        
         <main>
-            <div class="container">
-                <div class="row">
-                    <div id="connectionStatusIndicator" class="col text-white text-center" style="display: none;">
-                        <h4><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> CONNECTION REQUIRED</h4><br />
-                    </div>
-                </div>
-                
-                <div class="row">
+            <div class="container">               
+                <div class="row" style="margin-top: 70px;">
                     <div class="col-md-6">
-                        <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop"><i class="fas fa-wallet"></i> My Wallet <small>(<b id="percentageIndicator"><span id="myPercentage">0.00</span>&#37;</b> of eWLTH Supply)</small></div>
+                        <div class="card glassPanel whiteBorder">
+                            <div class="card-header rcTop"><i class="fas fa-wallet"></i> My Wallet <small>(<b id="percentageIndicator"><span id="myPercentage">0.00</span>&#37;</b> of eWLTH Supply)</small></div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h3><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="myCropTokens"><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span></h3>
-                                            <span>
-                                                <span id="myTokensValue" ><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span> USD<br />
-                                                <small>My Balance</small>
-                                            </span>
-                                            
+                                            <small>My eWLTH</small>
                                         </div>
                                         
                                         <div class="col text-center">
-                                            <h3 ><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myCropDividends"><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span></h3>
-                                            <span>
-                                                <span id="myDividendsValue"><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span> USD<br />
-                                                <small>My Dividends</small>
-                                            </span>
+                                            <h3><img src="assets/img/dollar.png" width="25px" height="25px" /> <span id="myTokensValue" ><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span></h3>
+                                            <small>USD Value</small>
+                                            
                                         </div>
-                                        
-                                        
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-footer rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="reinvest" class="btn btn-block btn-md btn-success rcAll"><i class="recycle icon"></i>Compound</button>
+                                            <button class="btn btn-block btn-md btn-light rcAll" data-target="#transferModal" data-toggle="modal"><i class="fas fa-arrow-up"></i> Send</button>
                                         </div>
                                         
                                         <div class="col text-center">
-                                            <button id="withdraw" class="btn btn-block btn-md btn-danger rcAll"><i class="money bill alternate  icon"></i>Withdraw</button>
+                                            <button class="btn btn-block btn-md btn-light rcAll" data-target="#qrcodeModal" data-toggle="modal"><i class="fas fa-arrow-down"></i> Receive</button>
                                         </div>
                                     </div>
                                 </div>
@@ -139,9 +113,47 @@
                         </div>
                         <br />
                     </div>
-                    <div class="col-md-3">
-                        <div class="card glassPanel border-success rcAll">
-                            <div class="card-header glassPanel rcTop"><i class="fas fa-dollar-sign text-success"></i> Buy eWLTH</div>
+                    
+                    <div class="col-md-6">
+                        <div class="card glassPanel whiteBorder">
+                            <div class="card-header rcTop"><i class="fas fa-wallet"></i> My Dividends</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h3><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myCropDividends"><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span></h3>
+                                            <small>ETH Dividends</small>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h3><img src="assets/img/eth-logo-transparent.png" width="18px" height="25px" /> <span id="myDividendsValue"><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span></h3>
+                                            <small>USD Value</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button id="reinvest" class="btn btn-block btn-md btn-light greenBorder rcAll"><i class="recycle icon"></i>Compound</button>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <button id="withdraw" class="btn btn-block btn-md btn-light redBorder rcAll"><i class="money bill alternate  icon"></i>Withdraw</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel greenBorder">
+                            <div class="card-header rcTop"><i class="fas fa-dollar-sign text-success"></i> Buy eWLTH</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
@@ -166,7 +178,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-footer rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
@@ -178,9 +190,9 @@
                         </div>
                         <br />
                     </div>
-                    <div class="col-md-3">
-                        <div class="card glassPanel border-danger rcAll">
-                            <div class="card-header glassPanel rcTop"><i class="fas fa-dollar-sign text-danger"></i> Sell eWLTH</div>
+                    <div class="col-md-6">
+                        <div class="card glassPanel redBorder">
+                            <div class="card-header rcTop"><i class="fas fa-dollar-sign text-danger"></i> Sell eWLTH</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
@@ -205,7 +217,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-footer rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
@@ -217,111 +229,33 @@
                         </div>
                         <br />
                     </div>
-                    
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <b>Invite your Friends!</b>
-                                            <p>When others use your Referral Link to Buy eWLTH, you get a special bonus! Be sure to share it around on all your Social Media!</p>
-                                        </div>
-                                    </div>
-                                    <br />
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <button id="copyMNButton" class="btn btn-block -md btn-secondary rcAll copyLinkButton" data-clipboard-text="">
-                                                <i class="copy icon"></i> Copy Link
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
+                    <div class="col text-center">
+                        <a class="btn btn-lg btn-block btn-light rcAll" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar"></i> View Market Data Chart</a><br />
                     </div>
                     
-                    <div class="col-md-6">
-                            <div class="card glassPanel rcAll">
-                                <div class="card-header glassPanel rcTop"><i class="fas fa-arrow-right text-warning"></i> Transfer eWLTH</div>
-                                <div class="card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-4 text-left">
-                                                <label>eWLTH to Send</label>
-                                                <input type="text" id="transferTokenCount" placeholder="Amount of eWLTH" class="form-control rcAll">
-                                                <br />
-                                            </div>
-                                            
-                                            <div class="col-md-8 text-left">
-                                                <label>Recipient Address</label>
-                                                <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
-                                                <br />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer glassPanel rcBottom">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <button id="transfer" class="btn btn-block btn-md btn-warning rcAll">Transfer eWLTH</button>
-                                            </div>
-
-                                            <div class="col text-center">
-                                                <button id="qrCodeButton" class="btn btn-block btn-md btn-secondary rcAll" data-target="#qrcodeModal" data-toggle="modal">
-                                                    <i class="fas fa-qrcode"></i> Show QR Code
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar"></i> View Market Data Chart</a><br />
-                    </div>
-                    
-                    <div class="col-md-4 text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll" href="https://www.coinbase.com/buy-ethereum" target="_blank"><i class="fab fa-ethereum"></i> Get More ETH</a><br />
-                    </div>
-                    
-                    <div class="col-md-4 text-center">
-                        <a class="btn btn-lg btn-block btn-secondary rcAll" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank"><i class="fas fa-search-dollar"></i> View on EtherScan</a><br />
+                    <div class="col text-center">
+                        <a class="btn btn-lg btn-block btn-light rcAll" href="#" data-target="#referralModal" data-toggle="modal"><i class="fas fa-user-friends"></i> Referral Link</a><br />
                     </div>
                 </div>
-                <br />
  
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop">Price Floor</div>
+                            <div class="card-header rcTop">Price Floor</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4><img src="assets/img/wlth-gradient-coin.png" width="25px" height="25px" /> <span id="rainMakerTokens"><img src="assets/img/tail-spin.svg" width="18px" height="18px" /></span> eWLTH</h4>
-                                            <p>The Price Floor provides a guaranteed minimum value for eWLTH!<br />
-                                                <small><a href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn More</a></small>
-                                            </p>
+                                            <p>Ensuring Permanent Value</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-footer rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
@@ -336,9 +270,9 @@
                         <br />
                     </div>
                     
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop">Your Portfolio</div>
+                            <div class="card-header rcTop">Your Portfolio</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
@@ -349,11 +283,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-footer rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a id="blockscoutLink" class="btn btn-block btn-md btn-secondary rcAll" href="https://etherscan.io/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
+                                            <a class="btn btn-block btn-md btn-secondary rcAll" href="https://www.coinbase.com/buy-ethereum"><i class="fab fa-ethereum"></i> Get More ETH</a>
                                         </div>
                                     </div>
                                 </div>
@@ -362,9 +296,9 @@
                         <br />
                     </div>
                     
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop">Commonwealth.gg</div>
+                            <div class="card-header rcTop">Commonwealth.gg</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
@@ -375,11 +309,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-footer rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-md btn-secondary rcAll" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6#code" target="_blank">View Contract</a>
+                                            <a class="btn btn-block btn-md btn-secondary rcAll" href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6#code" target="_blank"><i class="fas fa-search-dollar"></i> View Contract</a>
                                         </div>
                                     </div>
                                 </div>
@@ -388,26 +322,25 @@
                         <br />
                     </div>
                 </div>
+                
             </div>
         </main>
         
-        <footer>
+        <footer class="footer bg-light">
             <div class="container">
-                <div class="row jumbotron glassPanel rcAll">
+                <div class="row">
                     <div class="col text-center">
-                        <small >
+                        <br />
+                        <small>
                             This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
                         </small><br />
                         <div id="google_translate_element"></div>
+                        <br />
                     </div>
                 </div>
             </div>
         </footer>
-        
-        <br /><br /><br />
-        <br /><br /><br />
-        
-        <!-- QR Code Modal -->
+
         <div class="modal" id="qrcodeModal">
             <div class="modal-dialog">
                 <div class="modal-content bg-light rcAll">
@@ -445,8 +378,6 @@
             </div>
         </div>
         
-        <!-- Modals -->
-        <!-- Market Data Modal -->
         <div class="modal" id="marketdatachartModal">
             <div class="modal-dialog">
                 <div class="modal-content bg-light rcAll">
@@ -482,6 +413,130 @@
                                             <div class="item" data-value="365">1 Year</div>
                                             <div class="item" data-value="100000">Max</div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="transferModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Send eWLTH</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <label>eWLTH to Send</label>
+                                    <input type="number" id="transferTokenCount" placeholder="Amount of eWLTH" class="form-control rcAll">
+                                    <br />
+                                </div>
+                                            
+                                <div class="col-md-8 text-left">
+                                    <label>Recipient Address</label>
+                                    <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
+                                    <br />
+                                </div>
+                            </div>
+                                        
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button id="transfer" class="btn btn-block btn-md btn-success rcAll">Transfer eWLTH</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="referralModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Referral Link</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <b>Invite your Friends!</b>
+                                    <p>When others use your Referral Link to Buy eWLTH, you get a special bonus! Be sure to share it around on all your Social Media!</p>
+                                    <button id="copyMNButton" class="btn btn-block -md btn-secondary rcAll copyLinkButton" data-clipboard-text="">
+                                        <i class="copy icon"></i> Copy Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="settingsModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">eWLTH Settings</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Set Referrer</h3>
+                                    <label>Enter your referrer&apos;s ETH Address: </label><br />
+                                    <input id="referralAddress" type="text" class="form-control-sm btn-block text-dark rcAll" placeholder="0x..." /><br />
+                                    <button id="setReferral" class="btn btn-block btn-md btn-success rcAll" href="#">Set Referrer</button>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Theme Settings</h3>
+                                    <p>Toggle the switch below to enable or disable Dark Mode!</p>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                        <label class="custom-control-label" for="darkSwitch">Use Dark Mode</label>
                                     </div>
                                 </div>
                             </div>

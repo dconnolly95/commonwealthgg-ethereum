@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
         
         <!-- Bootstrap theme -->
-        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap-default.min.css" />
         <link rel="stylesheet" href="assets/css/hourglass.css" />
         <link rel="stylesheet" href="assets/css/dark-mode.css">
         
@@ -45,16 +45,14 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="index.html"><h4><img src="assets/img/wlth-gradient-coin.png" width="30px" height="30px" /> <span>eWLTH</span></h4></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span><i class="fas fa-chevron-circle-down"></i></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-coins"></i>  <span>Dashboard</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="market.html"><i class="fas fa-chart-line"></i> <span>Market</span></a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
@@ -65,39 +63,36 @@
                             <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="https://twitter.com/eWLTH_GG" target="_blank"><i class="fab fa-twitter text-info"></i>  Twitter</a>
                                 <a class="dropdown-item" href="https://discord.gg/6ccbCUv" target="_blank"><i class="fab fa-discord text-primary"></i> <span>Discord</span></a>
-                                <a class="dropdown-item" href="https://t.me/eWLTH" target="_blank"><i class="fab fa-telegram text-white"></i> <span>Telegram</span></a>
+                                <a class="dropdown-item" href="https://t.me/eWLTH" target="_blank"><i class="fab fa-telegram text-info"></i> <span>Telegram</span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>Showcase</span></a>
+                                <a class="dropdown-item" href="media.html"><i class="fab fa-youtube text-danger"></i> <span>YouTube</span></a>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/p3c-bot" target="_blank"><i class="fab fa-github"></i> <span>GitHub</span></a></li>
-                        <li class="nav-item">
-                            <span class="nav-link">
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
-                                    <label class="custom-control-label" for="darkSwitch">Light/Dark</label>
-                                </div>
-                            </span>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" data-target="#settingsModal" data-toggle="modal"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-
-        <br /><br /><br />
-        <br /><br /><br />
         
         <main role="main">
-            <div class="container">
+            <div class="jumbotron glassPanel rcBottom" style="margin-top: 55px;">
                 <div class="row">
                     <div class="col text-center">
-                        <img src="assets/img/wlth-icon-white.png" width="150px" height="150px" />
-                        <h1 class="text-white notranslate">eth.commonwealth.gg</h1>
-                        <p class="text-white">The World&apos;s Saving Fund on Ethereum</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img src="assets/img/wlth-gradient-coin.png" width="150px" height="150px" />
+                                    <h1>eWLTH</h1>
+                                    <p>The World Savings Vault on Ethereum</p><br />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br />
-                
+            </div>
+            
+            <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center">
                         <div class="card glassPanel rcAll">
@@ -215,22 +210,68 @@
             </div>
         </main>
         
-        <footer>
+        <footer class="footer bg-light">
             <div class="container">
-                <div class="row jumbotron glassPanel rcAll">
+                <div class="row">
                     <div class="col text-center">
+                        <br />
                         <small>
-                            This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in <span class="notranslate">Commonwealth</span>. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
+                            This project is experimental. Do not send any ETH you cannot afford to lose. There is zero guarantee that you will make ETH. This is very new technology and we kindly ask anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth. The contract is running <a href="https://etherscan.io/address/0x5833C959C3532dD5B3B6855D590D70b01D2d9fA6" target="_blank">here</a> and cannot be changed. Don't trust, verify. 
                         </small><br />
                         <div id="google_translate_element"></div>
+                        <br />
                     </div>
                 </div>
             </div>
         </footer>
-        <br />
-        <br />
-        <br />
-        <br />
+        
+        <!-- MODALS -->
+        <div class="modal" id="settingsModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">eWLTH Settings</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Set Referrer</h3>
+                                    <label>Enter your referrer&apos;s ETH Address: </label><br />
+                                    <input id="referralAddress" type="text" class="form-control-sm btn-block rcAll" placeholder="0x..." /><br />
+                                    <button id="setReferral" class="btn btn-block btn-md btn-success rcAll" href="#">Set Referrer</button>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3>Theme Settings</h3>
+                                    <p>Toggle the switch below to enable or disable Dark Mode!</p>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                        <label class="custom-control-label" for="darkSwitch">Use Dark Mode</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block -md btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
     </body>
     
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
